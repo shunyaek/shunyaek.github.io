@@ -1,0 +1,52 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0rem 0;
+}
+
+.logo img {
+  margin: var(--standard-margin);
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: none;
+}
+
+.logo::before {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 24rem;
+  height: 24rem;
+}
+
+.logo::after {
+  background: var(--primary-glow);
+  border-radius: 50%;
+  width: 24rem;
+  height: 24rem;
+}
+
+.logo::before,
+.logo::after {
+  content: '';
+  position: absolute;
+  filter: blur(4rem);
+  transform: translateZ(0);
+  z-index: -1;
+  animation-name: rotateglow;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotateglow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
