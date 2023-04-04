@@ -13,6 +13,7 @@
   flex: calc(100% / 2);
   width: 100%;
   min-width: calc(100% / 2);
+  min-height: calc(100% / 1);
   max-width: 100%;
   height: 100%;
   justify-content: center;
@@ -230,6 +231,7 @@
   align-items: center;
   position: relative;
   padding: 0rem 0;
+  margin-top: 8rem;
 }
 
 .contact a {
@@ -279,6 +281,36 @@
 }
 
 @media (min-width: 640px) {
+  .halfwidthpane {
+    flex: calc(100% / 2);
+    width: 100%;
+    min-width: calc(100% / 2);
+    max-width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .sidepane {
+    display: flex;
+    flex: calc(100% / 2);
+    width: calc(100% - (2 * 0.2rem));
+    min-width: calc((100% / 2) - (2 * 0.2rem));
+    max-width: calc(100% - (2 * 0.2rem));
+    height: calc(100% - (2 * 0.2rem));
+    overflow: scroll;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border: 0.2rem solid var(--header-and-footer-border);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    background: transparent;
+    backdrop-filter: blur(4rem);
+    font-weight: lighter;
+  }
+
   .contact {
     display: flex;
     flex-direction: column;
@@ -286,7 +318,7 @@
     align-items: center;
     position: relative;
     padding: 0rem 0;
-    margin-top: 4rem;
+    margin-top: 8rem;
   }
 
   .contact a {
@@ -341,7 +373,7 @@
     align-items: center;
     position: relative;
     padding: 0rem 0;
-    margin-top: 4rem;
+    margin-top: 8rem;
   }
 
   .contact a {
@@ -392,7 +424,7 @@
     align-items: center;
     position: relative;
     padding: 0rem 0;
-    margin-top: 4rem;
+    margin-top: 8rem;
   }
 
   .contact a {
