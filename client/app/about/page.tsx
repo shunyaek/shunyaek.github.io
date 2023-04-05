@@ -1,4 +1,5 @@
-import Image from 'next/image'
+'use client';
+
 import styles from "../page.module.css"
 
 const TechnologyPill = ({ technology }: { technology: string; }) => {
