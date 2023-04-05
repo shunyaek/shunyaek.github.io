@@ -53,10 +53,10 @@
   max-width: 80%;
   height: 80%;
   max-height: 80%;
-  /* animation-name: sidepaneglow-green;
+  animation-name: sidepaneglow-green;
   animation-duration: 6s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; */
+  animation-timing-function: linear;
 }
 
 .sidepane::after {
@@ -66,10 +66,10 @@
   max-width: 80%;
   height: 80%;
   max-height: 80%;
-  /* animation-name: sidepaneglow-blue;
+  animation-name: sidepaneglow-blue;
   animation-duration: 6s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; */
+  animation-timing-function: linear;
 }
 
 .sidepane::before,
@@ -170,10 +170,10 @@
   max-width: 80%;
   height: 80%;
   max-height: 80%;
-  /* animation-name: sidepaneglow-green;
+  animation-name: sidepaneglow-green;
   animation-duration: 6s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; */
+  animation-timing-function: linear;
 }
 
 .logo::after {
@@ -183,10 +183,10 @@
   max-width: 80%;
   height: 80%;
   max-height: 80%;
-  /* animation-name: sidepaneglow-blue;
+  animation-name: sidepaneglow-blue;
   animation-duration: 6s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; */
+  animation-timing-function: linear;
 }
 
 .logo::before,
