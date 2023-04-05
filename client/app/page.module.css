@@ -25,20 +25,60 @@
 .sidepane {
   display: flex;
   flex: calc(100% / 2);
-  width: calc(100% - (2 * 0.2rem));
-  min-width: calc((100% / 2) - (2 * 0.2rem));
-  max-width: calc(100% - (2 * 0.2rem));
-  height: calc(100% - (2 * 0.2rem));
-  overflow: scroll;
-  justify-content: space-between;
+  max-width: calc(100% / 2);
+  width: calc(100% / 2);
+  min-width: calc((100% / 1) - 5%);
+  max-height: calc(100% / 2);
+  height: calc(100% / 2);
+  min-height: calc((100% / 1) - 20%);
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  overflow: scroll;
   border: 0.2rem solid var(--header-and-footer-border);
   border-radius: 1rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   background: transparent;
   backdrop-filter: blur(4rem);
   font-weight: lighter;
+  margin-top: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.sidepane::before {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 80%;
+  max-width: 80%;
+  height: 80%;
+  max-height: 80%;
+  animation-name: sidepaneglow-green;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.sidepane::after {
+  background: var(--primary-glow);
+  border-radius: 50%;
+  width: 80%;
+  max-width: 80%;
+  height: 80%;
+  max-height: 80%;
+  animation-name: sidepaneglow-blue;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.sidepane::before,
+.sidepane::after {
+  content: '';
+  position: absolute;
+  filter: blur(4rem);
+  transform: translateZ(0);
+  z-index: -1;
 }
 
 .bitstomagic {
@@ -69,7 +109,7 @@
   width: 100%;
   font-family: var(--monospace-font);
   font-size: 1rem;
-  font-weight: lighter;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -84,7 +124,8 @@
   margin-bottom: 0.1rem;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
-  background: var(--background);
+  background: var(--background-opaque);
+  backdrop-filter: blur(4rem);
 }
 
 .technologytitle {
@@ -293,30 +334,37 @@
     width: 100%;
     min-width: calc(100% / 2);
     max-width: 100%;
-    height: 100%;
+    height: calc(100vh / 1);
+    min-height: 100%;
+    max-height: calc(100vh / 1);
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  
-  .sidepane {
+
+  /* .sidepane {
     display: flex;
     flex: calc(100% / 2);
+    width: 100%;
+    min-width: calc(100% / 2);
+    min-height: 100%;
+    max-width: 100%;
+    height: calc(100vh / 1);
     width: calc(100% - (2 * 0.2rem));
     min-width: calc((100% / 2) - (2 * 0.2rem));
     max-width: calc(100% - (2 * 0.2rem));
     height: calc(100% - (2 * 0.2rem));
     overflow: scroll;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 0.2rem solid var(--header-and-footer-border);
+    border: 0.2rem solid black;var(--header-and-footer-border);
     border-radius: 1rem;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     background: transparent;
     backdrop-filter: blur(4rem);
     font-weight: lighter;
-  }
+  } */
 
   .contact {
     display: flex;

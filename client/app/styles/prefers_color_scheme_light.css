@@ -5,6 +5,7 @@
     --double-padding: calc(var(--standard-padding) * 2);
     --slim-padding: calc(var(--standard-padding) / 5);
     --background: #f8fafc;
+    --background-opaque: #f8fafc99;
     --header-and-footer-border: #f1f5f9;
     --text: #0f172a;
     --sans-serif-font: 'Red Hat Text', sans-serif;
