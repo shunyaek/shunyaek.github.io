@@ -1,7 +1,7 @@
 @media (min-width: 768px) {
     main {
-        padding-top: calc(var(--double-padding));
-        padding-bottom: calc(var(--double-padding));
+        /* padding-top: calc(var(--double-padding)); */
+        /* padding-bottom: calc(var(--double-padding)); */
         display: flex;
         flex-direction: column;
         justify-content: center;
