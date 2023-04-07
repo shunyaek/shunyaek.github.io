@@ -1,5 +1,3 @@
-'use client';
-
 import styles from "../page.module.css"
 
 const TechnologyPill = ({ technology }: { technology: string; }) => {
