@@ -1,12 +1,14 @@
+"use client"
+
 import './globals.css'
 import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
 
-export const metadata = {
-  title: 'shunyaek',
-  description: 'shunyaek.se',
-}
+// export const metadata = {
+//   title: 'shunyaek',
+//   description: 'shunyaek.se',
+// }
 
 export default function RootLayout({
   children,

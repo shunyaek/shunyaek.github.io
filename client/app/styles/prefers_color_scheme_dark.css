@@ -6,10 +6,11 @@
         --double-padding: calc(var(--standard-padding) * 2);
         --slim-padding: calc(var(--standard-padding) / 5);
         --background: #0f172a;
+        --background-opaque: #02061799;
         --header-and-footer-border: #1e293b;
         --text: #f8fafc;
         --sans-serif-font: 'Red Hat Text', sans-serif;
-        --monospace-font: ui-monospace, monospace;
+        --monospace-font: 'Red Hat Mono', monospace;
         --background-start-rgb: 2, 6, 23;
         --background-end-rgb: 2, 6, 23;
         --button-background-start-rgb: 30, 41, 59;

@@ -6,7 +6,7 @@ const TechnologyPill = ({ technology }: { technology: string; }) => {
   );
 }
 
-export default function Home() {
+export default function About() {
   const technologies = [
     "Python", "JavaScript", "TypeScript",
     "Django", "Flask", "FastAPI", "NodeJS",

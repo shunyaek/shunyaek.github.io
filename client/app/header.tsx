@@ -1,3 +1,5 @@
+"use client"
+
 type TabType = {
   title: string;
   path: string;
@@ -8,6 +10,7 @@ export default function Header() {
   const tabs: TabType[] = [
     { title: "home", path: "/" },
     { title: "about", path: "/about" },
+    // { title: "universe", path: "/universe" },
     // { title: "work", path: "#" },
     // { title: "blog", path: "#" },
   ];

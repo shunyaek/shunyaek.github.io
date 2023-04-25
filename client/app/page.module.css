@@ -1,3 +1,7 @@
+.canvas-container {
+  border: 0.2rem solid black;
+}
+
 .fullwidthpane {
   flex: calc(100% / 1);
   width: 100%;
@@ -84,9 +88,42 @@
 }
 
 .bitstomagic {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   font-family: var(--sans-serif-font);
   font-weight: lighter;
-  margin-top: 4rem;
+  width: 100%;
+  /* border: 1px solid white; */
+}
+
+.typewriter {
+  font-weight: lighter;
+  font-family: var(--monospace-font);
+}
+
+.cursor {
+  font-weight: bold;
+  font-size: 5rem;
+  text-align: center;
+  animation-name: blinking-cursor;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes blinking-cursor {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .introductionsection {
@@ -285,7 +322,7 @@
   align-items: center;
   position: relative;
   padding: 0rem 0;
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 .contact a {
@@ -332,6 +369,9 @@
   text-decoration: none;
   text-decoration-color: var(--text);
   box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  background: linear-gradient(to top,
+      transparent,
+      rgb(var(--button-background-end-rgb))) rgb(var(--button-background-start-rgb));
 }
 
 @media (min-width: 640px) {
@@ -379,7 +419,7 @@
     align-items: center;
     position: relative;
     padding: 0rem 0;
-    margin-top: 8rem;
+    margin-top: 1rem;
   }
 
   .contact a {
@@ -434,7 +474,7 @@
     align-items: center;
     position: relative;
     padding: 0rem 0;
-    margin-top: 8rem;
+    margin-top: 1rem;
   }
 
   .contact a {
@@ -485,7 +525,7 @@
     align-items: center;
     position: relative;
     padding: 0rem 0;
-    margin-top: 8rem;
+    margin-top: 1rem;
   }
 
   .contact a {
