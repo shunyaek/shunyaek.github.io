@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // transpilePackages: ["three"],
+  reactStrictMode: true,
   experimental: {
     appDir: true,
+    runtime: "edge",
   },
 }
 
