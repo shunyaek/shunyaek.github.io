@@ -39,7 +39,7 @@ export default function Home() {
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState<number>(0)
   const [textAtCursor, setTextAtCursor] = useState<string>("")
-  const [completeText, setCompleteText] = useState<string>("")
+  const [completeText, setCompleteText] = useState<string>("Hello, world!")
   const [shouldTypeReverse, setShouldTypeReverse] = useState<boolean>(false)
   useEffect(() => {
     const textList = [
