@@ -32,18 +32,16 @@
   max-width: calc(100% / 2);
   width: calc(100% / 2);
   min-width: calc((100% / 1) - 5%);
-  max-height: calc(100% / 2);
-  height: calc(100% / 2);
-  min-height: calc((100% / 1) - 20%);
+  max-height: calc((100% / 1) - 15%);
+  height: calc((100% / 1) - 30%);
+  min-height: calc((100% / 1) - 30%);
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   overflow: scroll;
-  border: 0.2rem solid var(--header-and-footer-border);
   border-radius: 1rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   background: transparent;
-  /* backdrop-filter: blur(4rem); */
   font-weight: lighter;
   margin-top: 5%;
   padding-top: 5%;
@@ -88,28 +86,111 @@
 }
 
 .bitstomagic {
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-family: var(--sans-serif-font);
   font-weight: lighter;
   width: 100%;
-  /* border: 1px solid white; */
+  min-height: 15%;
 }
 
 .typewriter {
   font-weight: lighter;
+  font-size: 2rem;
   font-family: var(--monospace-font);
 }
 
 .cursor {
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 3rem;
   text-align: center;
   animation-name: blinking-cursor;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+}
+
+@media (min-width: 640px) {
+  .cursor {
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    animation-name: blinking-cursor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .typewriter {
+    font-weight: lighter;
+    font-size: 2rem;
+    font-family: var(--monospace-font);
+  }
+}
+@media (min-width: 768px) {
+  .cursor {
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    animation-name: blinking-cursor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .typewriter {
+    font-weight: lighter;
+    font-size: 2rem;
+    font-family: var(--monospace-font);
+  }
+}
+@media (min-width: 1024px) {
+  .cursor {
+    font-weight: bold;
+    font-size: 3.75rem;
+    text-align: center;
+    animation-name: blinking-cursor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .typewriter {
+    font-weight: lighter;
+    font-size: 2.5rem;
+    font-family: var(--monospace-font);
+  }
+}
+@media (min-width: 1280px) {
+  .cursor {
+    font-weight: bold;
+    font-size: 4.5rem;
+    text-align: center;
+    animation-name: blinking-cursor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .typewriter {
+    font-weight: lighter;
+    font-size: 3rem;
+    font-family: var(--monospace-font);
+  }
+}
+@media (min-width: 1536px) {
+  .cursor {
+    font-weight: bold;
+    font-size: 4.5rem;
+    text-align: center;
+    animation-name: blinking-cursor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .typewriter {
+    font-weight: lighter;
+    font-size: 3rem;
+    font-family: var(--monospace-font);
+  }
 }
 
 @keyframes blinking-cursor {
@@ -331,6 +412,8 @@
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: center;
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--button-background-end-rgb))) rgb(var(--button-background-start-rgb));

@@ -26,7 +26,7 @@ export default function About() {
       <article className={styles.sidepane}>
         <section className={styles.introductionsection}>
           <div>
-            <span className={styles.introductionquotes}>&quot;shunyaek&quot;</span> is a combination of two words: <span className={styles.introductionquotes}>&quot;shunya&quot;</span> & <span className={styles.introductionquotes}>&quot;ek&quot;</span>. They mean <span className={styles.introductionquotes}>&quot;zero&quot;</span> and <span className={styles.introductionquotes}>&quot;one&quot;</span> in Hindi respectively. In the world of computers & technology, these binary digits or bits are the building blocks of everything. At shunyaek, we create magic from these bits for you!
+            <span className={styles.introductionquotes}>&quot;shunyaek&quot;</span> is a combination of two words: <span className={styles.introductionquotes}>&quot;shunya&quot;</span> & <span className={styles.introductionquotes}>&quot;ek&quot;</span>. They mean <span className={styles.introductionquotes}>&quot;zero&quot;</span> and <span className={styles.introductionquotes}>&quot;one&quot;</span> in Hindi respectively. In the world of computers & technology, these binary digits or bits are the building blocks of everything. At shunyaek, we create magic from these bits!
           </div>
         </section>
         <section className={styles.technologies}>
