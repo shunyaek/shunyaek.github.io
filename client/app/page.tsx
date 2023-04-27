@@ -56,7 +56,9 @@ export default function Home() {
     ]
     if (textAtCursor.length < completeText.length && !shouldTypeReverse) {
       setTimeout(() => {
-        setTextAtCursor(textAtCursor + completeText[textAtCursor.length])
+        setTimeout(() => {
+          setTextAtCursor(textAtCursor + completeText[textAtCursor.length])
+        }, Math.random() * 250)
       }, 150)
     }
     if (textAtCursor.length === completeText.length) {
@@ -66,7 +68,9 @@ export default function Home() {
     }
     if (textAtCursor.length <= completeText.length && shouldTypeReverse) {
       setTimeout(() => {
-        setTextAtCursor(textAtCursor.slice(0, -1))
+        setTimeout(() => {
+          setTextAtCursor(textAtCursor.slice(0, -1))
+        }, Math.random() * 150)
       }, 150)
     }
     if (textAtCursor.length === 0 && shouldTypeReverse) {
