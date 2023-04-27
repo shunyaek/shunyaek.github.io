@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import styles from "./page.module.css"
-import { VscMail, VscCommentDiscussion, VscHome } from "react-icons/vsc"
+import { VscMail, VscCommentDiscussion, VscHome, VscHeart } from "react-icons/vsc"
 import { useEffect, useState } from 'react'
 
 type ContactIconType = {
@@ -56,10 +56,8 @@ export default function Home() {
     ]
     if (textAtCursor.length < completeText.length && !shouldTypeReverse) {
       setTimeout(() => {
-        setTimeout(() => {
-          setTextAtCursor(textAtCursor + completeText[textAtCursor.length])
-        }, Math.random() * 250)
-      }, 150)
+        setTextAtCursor(textAtCursor + completeText[textAtCursor.length])
+      }, Math.random() * 150)
     }
     if (textAtCursor.length === completeText.length) {
       setTimeout(() => {
@@ -68,10 +66,8 @@ export default function Home() {
     }
     if (textAtCursor.length <= completeText.length && shouldTypeReverse) {
       setTimeout(() => {
-        setTimeout(() => {
-          setTextAtCursor(textAtCursor.slice(0, -1))
-        }, Math.random() * 150)
-      }, 150)
+        setTextAtCursor(textAtCursor.slice(0, -1))
+      }, Math.random() * 100)
     }
     if (textAtCursor.length === 0 && shouldTypeReverse) {
       setShouldTypeReverse(false)
@@ -92,8 +88,13 @@ export default function Home() {
           />
         </section>
         <section className={styles.bitstomagic}>
+          {/* <h1 className={styles.domains}><VscHeart /></h1> */}
           <h1 className={styles.typewriter}>{textAtCursor}<span className={styles.cursor}>{"|"}</span></h1>
         </section>
+        {/* <section className={styles.bitstomagic}>
+          <h1 className={styles.domains}><VscHeart /></h1>
+          <h1 className={styles.domains}>product engineering</h1>
+        </section> */}
         <section className={styles.contact}>
           {contactButtons.map((tab: ContactButtonType) => {
             return (<a key={tab.path} target='_blank' href={tab.path}>

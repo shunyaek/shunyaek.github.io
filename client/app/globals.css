@@ -136,6 +136,16 @@ section {
 
 article {
     display: flex;
+    background-image: url(/backgrounds/Light.svg);
+    background-repeat: repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+    article {
+        display: flex;
+        background-image: url(/backgrounds/Dark.svg);
+        background-repeat: repeat;
+    }   
 }
 
 article>p {
