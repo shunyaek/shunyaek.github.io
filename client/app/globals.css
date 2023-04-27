@@ -40,7 +40,7 @@ main {
     max-height: 100vh;
     min-height: 100vh;
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 header,
@@ -75,7 +75,7 @@ header nav {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
 }
 
