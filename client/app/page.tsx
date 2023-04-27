@@ -87,14 +87,6 @@ export default function Home() {
             priority
           />
         </section>
-        <section className={styles.bitstomagic}>
-          {/* <h1 className={styles.domains}><VscHeart /></h1> */}
-          <h1 className={styles.typewriter}>{textAtCursor}<span className={styles.cursor}>{"|"}</span></h1>
-        </section>
-        {/* <section className={styles.bitstomagic}>
-          <h1 className={styles.domains}><VscHeart /></h1>
-          <h1 className={styles.domains}>product engineering</h1>
-        </section> */}
         <section className={styles.contact}>
           {contactButtons.map((tab: ContactButtonType) => {
             return (<a key={tab.path} target='_blank' href={tab.path}>
@@ -103,6 +95,14 @@ export default function Home() {
             </a>);
           })}
         </section>
+        <section className={styles.bitstomagic}>
+          {/* <h1 className={styles.domains}><VscHeart /></h1> */}
+          <h1 className={styles.typewriter}>{textAtCursor}<span className={styles.cursor}>{"|"}</span></h1>
+        </section>
+        {/* <section className={styles.bitstomagic}>
+          <h1 className={styles.domains}><VscHeart /></h1>
+          <h1 className={styles.domains}>product engineering</h1>
+        </section> */}
       </article>
     </>
   )

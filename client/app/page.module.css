@@ -86,20 +86,19 @@
 }
 
 .bitstomagic {
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: var(--sans-serif-font);
   font-weight: lighter;
   width: 100%;
-  min-height: 30%;
+  min-height: 20%;
   background: transparent;
 }
 
 .typewriter {
   font-weight: lighter;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-family: var(--monospace-font);
 }
 
