@@ -145,6 +145,7 @@ article {
         display: flex;
         background-image: url(/backgrounds/Dark.svg);
         background-repeat: repeat;
+        background-blend-mode: darken;
     }   
 }
 
