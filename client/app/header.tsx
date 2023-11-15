@@ -8,9 +8,9 @@ type TabType = {
 
 export default function Header() {
   const tabs: TabType[] = [
-    { title: "home", path: "/" },
-    { title: "about", path: "/about" },
-    { title: "phase10.toolkit", path: "https://phase10.shunyaek.se" },
+    // { title: "home", path: "/" },
+    // { title: "about", path: "/about" },
+    // { title: "phase10.toolkit", path: "https://phase10.shunyaek.se" },
     // { title: "universe", path: "/universe" },
     // { title: "work", path: "#" },
     // { title: "blog", path: "#" },
