@@ -1,3 +1,11 @@
+.stdin {
+  width: 100%;
+  font-size: 1.4rem;
+  border: none;
+  background-color: transparent;
+  color: green;
+}
+
 .canvas-container {
   border: 0.2rem solid black;
 }
