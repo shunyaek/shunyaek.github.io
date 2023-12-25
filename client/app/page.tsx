@@ -35,7 +35,7 @@ type ContactButtonType = {
 export default function Home() {
   const contactButtons: ContactButtonType[] = [
     { type: "Chat", title: "+91 781 888 8887", path: "https://wa.me/message/HDI26CHRSLLUP1" },
-    { type: "E-Mail", title: "hi@shunyaek.se", path: "mailto:hi@shunyaek.se" },
+    { type: "E-Mail", title: "01@shunyaek.se", path: "mailto:01@shunyaek.se" },
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState<number>(0)
   const [textAtCursor, setTextAtCursor] = useState<string>("")
