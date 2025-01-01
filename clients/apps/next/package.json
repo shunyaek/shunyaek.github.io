@@ -11,6 +11,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@kubernetes/client-node": "^1.0.0",
     "@tamagui/config": "^1.121.4",
     "@tamagui/next-theme": "^1.121.4",
     "app": "0.0.0",
