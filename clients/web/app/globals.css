@@ -1,26 +1,380 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Brand colors */
+    --brand-primary: 217, 91%, 60%;
+    /* #3B82F6 - Blue */
+    --brand-secondary: 160, 84%, 39%;
+    /* #10B981 - Green */
+
+    /* System colors derived from brand colors */
+    --background: 0 0% 100%;
+    --foreground: 217 60% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 217 60% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 60% 10%;
+    --primary: var(--brand-primary);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--brand-secondary);
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 10% 96%;
+    --muted-foreground: 217 20% 40%;
+    --accent: 217 10% 96%;
+    --accent-foreground: 217 60% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 20% 90%;
+    --input: 217 20% 90%;
+    --ring: var(--brand-primary);
+    --radius: 0.5rem;
+
+    /* Button specific variables */
+    --button-background-start-rgb: 59, 130, 246;
+    /* #3B82F6 in RGB */
+    --button-background-end-rgb: 16, 185, 129;
+    /* #10B981 in RGB */
+    --header-and-footer-border: #e2e8f0;
+    --standard-padding: 0.5rem;
+    --double-padding: calc(var(--standard-padding) * 2);
+  }
+
+  .dark {
+    --background: 217 60% 10%;
+    --foreground: 0 0% 100%;
+    --card: 217 60% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 217 60% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: var(--brand-primary);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--brand-secondary);
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 20% 20%;
+    --muted-foreground: 217 20% 80%;
+    --accent: 217 20% 20%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 20% 30%;
+    --input: 217 20% 30%;
+    --ring: var(--brand-primary);
+
+    /* Button specific variables for dark mode */
+    --button-background-start-rgb: 59, 130, 246;
+    /* #3B82F6 in RGB */
+    --button-background-end-rgb: 16, 185, 129;
+    /* #10B981 in RGB */
+    --header-and-footer-border: #1e293b;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-urbanist;
+    background-image: url("/backgrounds/Light.svg");
+    background-repeat: repeat;
+    background-size: 24px 18px;
+    background-blend-mode: soft-dark;
+    opacity-background: 0.3;
+  }
+
+  .dark body {
+    background-image: url("/backgrounds/Dark.svg");
+    background-repeat: repeat;
+    background-size: 24px 18px;
+    background-blend-mode: soft-light;
+    opacity-background: 0.3;
+  }
+
+  /* Typography hierarchy */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-playfair font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+
+  p,
+  li,
+  a,
+  button,
+  input,
+  textarea,
+  span {
+    @apply font-urbanist;
+  }
+
+  .display-text {
+    @apply font-playfair font-bold;
+  }
+
+  .body-text {
+    @apply font-urbanist;
+  }
+
+  .caption-text {
+    @apply font-urbanist text-sm;
+  }
+
+  .button-text {
+    @apply font-urbanist font-medium;
+  }
+
+  .nav-text {
+    @apply font-urbanist font-medium;
+  }
 }
+
+@layer components {
+  .bg-grid-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Custom button styles based on reference code */
+  .custom-button {
+    border: 0.1rem solid var(--header-and-footer-border);
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    background: linear-gradient(
+      135deg,
+      rgba(var(--button-background-start-rgb), 1),
+      rgba(var(--button-background-end-rgb), 1)
+    );
+    padding: var(--standard-padding) var(--double-padding);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-urbanist);
+    font-weight: 500;
+    color: white;
+  }
+
+  .custom-button:hover {
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    background: linear-gradient(
+      135deg,
+      rgba(var(--button-background-end-rgb), 1),
+      rgba(var(--button-background-start-rgb), 1)
+    );
+  }
+
+  .custom-button svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .contact-link {
+    border: 0.1rem solid var(--header-and-footer-border);
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      135deg,
+      rgba(var(--button-background-start-rgb), 1),
+      rgba(var(--button-background-end-rgb), 1)
+    );
+    color: white;
+    text-decoration: none;
+    padding: var(--standard-padding) var(--double-padding);
+    margin: var(--standard-padding);
+    min-width: fit-content;
+    transition: all 0.2s ease;
+    font-family: var(--font-urbanist);
+    font-weight: 500;
+  }
+
+  .contact-link:hover {
+    text-decoration: none;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    background: linear-gradient(
+      135deg,
+      rgba(var(--button-background-end-rgb), 1),
+      rgba(var(--button-background-start-rgb), 1)
+    );
+  }
+
+  .contact-link svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  /* Brand gradient text */
+  .brand-gradient-text {
+    background: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-secondary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Brand gradient background */
+  .brand-gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-secondary)));
+  }
+
+  /* Brand shadow */
+  .brand-shadow {
+    box-shadow:
+      0 25px 50px -12px hsla(var(--brand-primary), 0.4), 0 35px 60px -15px hsla(var(--brand-secondary), 0.3),
+      0 -5px 40px -5px hsla(var(--brand-primary), 0.25), 0 0 0 3px hsla(var(--brand-primary), 0.2);
+  }
+
+  /* Plastiky tabs with brand colors */
+  .plastiky-tabs {
+    border: 0.1rem solid var(--header-and-footer-border);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    padding: 0.25rem;
+    background: rgba(var(--button-background-start-rgb), 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  }
+
+  .plastiky-tab {
+    border-radius: 0.4rem !important;
+    background: transparent !important;
+    color: var(--foreground) !important;
+    font-family: var(--font-urbanist);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    border: none !important;
+  }
+
+  .plastiky-tab[data-state="active"] {
+    background: linear-gradient(
+      135deg,
+      rgba(var(--button-background-start-rgb), 1),
+      rgba(var(--button-background-end-rgb), 1)
+    ) !important;
+    color: white !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  }
+
+  .plastiky-tab:hover:not([data-state="active"]) {
+    background: rgba(var(--button-background-start-rgb), 0.1) !important;
+  }
+
+  /* Embla Carousel Styles */
+  .embla {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .embla__container {
+    display: flex;
+    gap: 1rem;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: pan-y;
+  }
+
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    position: relative;
+    padding: 0;
+  }
+
+  .embla__slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Typography utility classes */
+  .heading-serif {
+    @apply font-playfair font-bold tracking-tight;
+  }
+
+  .text-sans {
+    @apply font-urbanist;
+  }
+
+  .lead-text {
+    @apply font-urbanist text-lg md:text-xl text-muted-foreground;
+  }
+
+  .quote-text {
+    @apply font-playfair italic text-lg md:text-xl;
+  }
+
+  .card-title {
+    @apply font-playfair font-bold text-xl md:text-2xl;
+  }
+
+  .card-description {
+    @apply font-urbanist text-muted-foreground;
+  }
+
+  .nav-link {
+    @apply font-urbanist font-medium text-sm transition-colors hover:text-primary;
+  }
+
+  .section-title {
+    @apply font-playfair font-bold text-3xl md:text-4xl lg:text-5xl tracking-tighter;
+  }
+
+  /* Fix for the section-description class */
+  .section-description {
+    font-family: var(--font-urbanist);
+    font-size: 1.125rem; /* text-lg */
+    color: hsl(var(--muted-foreground));
+    max-width: 700px;
+    margin-top: 1rem; /* mt-4 */
+  }
+}
+

@@ -1,0 +1,41 @@
+.carouselShadow {
+  box-shadow:
+    0 25px 50px -12px rgba(59, 130, 246, 0.4), 0 35px 60px -15px rgba(16, 185, 129, 0.3),
+    0 -5px 40px -5px rgba(59, 130, 246, 0.25), 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.heroBackgroundLight {
+  background-image: url("/images/background1-dark.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroBackgroundDark {
+  background-image: url("/images/background1-dark.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.embla {
+  overflow: hidden;
+  position: relative;
+}
+
+.embla__container {
+  display: flex;
+  gap: 1rem;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+  padding: 0;
+}
