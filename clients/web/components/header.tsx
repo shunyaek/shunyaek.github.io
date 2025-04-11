@@ -31,8 +31,8 @@ export function Header() {
                     <Link href="#pricing" className="nav-link">
                         Pricing
                     </Link>
-                    <Link href="#contact" className="nav-link">
-                        Contact
+                    <Link href="/connect" className="nav-link">
+                        Connect
                     </Link>
                     {/* <ThemeToggle /> */}
                 </nav>

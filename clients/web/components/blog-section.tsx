@@ -2,12 +2,57 @@
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { mockBlogPosts } from '@/lib/graphql/mockData';
 import { BlogCard } from '@/components/blog/BlogCard';
+import { useEffect, useState } from 'react';
+import { fetchBlogPosts } from '@/lib/supabase/client-blog-service';
+import { BlogPost } from '@/lib/graphql/types';
 
 export function BlogSection() {
-    // Get the latest 3 posts
-    const latestPosts = mockBlogPosts.slice(0, 3);
+    const [posts, setPosts] = useState<BlogPost[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const loadPosts = async () => {
+            try {
+                const fetchedPosts = await fetchBlogPosts();
+                setPosts(fetchedPosts.slice(0, 3)); // Get the latest 3 posts
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        loadPosts();
+    }, []);
+
+    if (isLoading) {
+        return (
+            <section className="py-24 bg-muted/50">
+                <div className="container">
+                    <div className="flex items-center justify-between mb-12">
+                        <div>
+                            <h2 className="text-3xl font-bold mb-4">Latest from Our Blog</h2>
+                            <p className="text-muted-foreground max-w-2xl">
+                                Stay updated with our latest insights, tutorials, and industry news.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="grid gap-8 md:grid-cols-3">
+                        {[1, 2, 3].map((i) => (
+                            <div key={i} className="animate-pulse">
+                                <div className="h-48 bg-muted rounded-t-lg" />
+                                <div className="p-6 space-y-4">
+                                    <div className="h-4 bg-muted rounded w-3/4" />
+                                    <div className="h-4 bg-muted rounded w-1/2" />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className="py-24 bg-muted/50">
@@ -28,7 +73,7 @@ export function BlogSection() {
                     </Link>
                 </div>
                 <div className="grid gap-8 md:grid-cols-3">
-                    {latestPosts.map((post) => (
+                    {posts.map((post) => (
                         <BlogCard key={post.id} post={post} />
                     ))}
                 </div>

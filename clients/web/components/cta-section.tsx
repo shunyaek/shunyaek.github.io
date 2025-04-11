@@ -100,8 +100,8 @@ export function CtaSection() {
                 </ul>
               </CardContent>
               <CardFooter className="mt-auto pt-4">
-                <CustomButton href={plan.price === "Custom" ? "/contact" : "/signup"} className="w-full">
-                  {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
+                <CustomButton href={plan.price === "Custom" ? "/connect" : "/signup"} className="w-full">
+                  {plan.price === "Custom" ? "Connect with Sales" : "Get Started"}
                 </CustomButton>
               </CardFooter>
             </Card>
@@ -111,11 +111,11 @@ export function CtaSection() {
         <div className="mt-16 flex flex-col items-center text-center">
           <h3 className="text-2xl font-bold font-playfair">Need a Custom Solution?</h3>
           <p className="mt-2 max-w-[600px] text-muted-foreground font-urbanist">
-            Contact our sales team at shunyaek.se to discuss your specific requirements and get a tailored solution for
+            Connect with our sales team at shunyaek.se to discuss your specific requirements and get a tailored solution for
             your business.
           </p>
-          <CustomButton href="/contact" className="mt-6 inline-flex">
-            Contact Us
+          <CustomButton href="/connect" className="mt-6 inline-flex">
+            Connect Now
           </CustomButton>
         </div>
       </div>

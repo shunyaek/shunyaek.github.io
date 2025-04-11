@@ -43,10 +43,10 @@ export function CreateBlogPostForm() {
         setIsSubmitting(true);
 
         try {
-            // For demo purposes, we're using hardcoded values for authorId and blogId
-            // In a real application, you would get these from the authenticated user
-            const authorId = 'your-author-id';
-            const blogId = 'your-blog-id';
+            // Using valid UUIDs for author and blog
+            // These should be replaced with actual IDs from your database
+            const authorId = '00000000-0000-0000-0000-000000000001';
+            const blogId = '00000000-0000-0000-0000-000000000001';
 
             const result = await createBlogPost(
                 formData.title,

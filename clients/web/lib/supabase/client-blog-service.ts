@@ -26,6 +26,7 @@ export const fetchBlogPosts = async (): Promise<BlogPost[]> => {
 
     // Fetch blog posts
     const { data: posts, error: postsError } = await supabase
+        .schema('se_home')
         .from('blog_posts')
         .select('*')
         .eq('status', 'published')
@@ -39,6 +40,7 @@ export const fetchBlogPosts = async (): Promise<BlogPost[]> => {
     // Fetch authors for all posts
     const authorIds = [...new Set(posts.map(post => post.author))];
     const { data: authors, error: authorsError } = await supabase
+        .schema('se_home')
         .from('authors')
         .select('*')
         .in('id', authorIds);
@@ -64,6 +66,7 @@ export const fetchBlogPostBySlug = async (slug: string): Promise<BlogPost | null
 
     // Fetch the blog post
     const { data: post, error: postError } = await supabase
+        .schema('se_home')
         .from('blog_posts')
         .select('*')
         .eq('slug', slug)
@@ -76,6 +79,7 @@ export const fetchBlogPostBySlug = async (slug: string): Promise<BlogPost | null
 
     // Fetch the author
     const { data: author, error: authorError } = await supabase
+        .schema('se_home')
         .from('authors')
         .select('*')
         .eq('id', post.author)
@@ -88,6 +92,7 @@ export const fetchBlogPostBySlug = async (slug: string): Promise<BlogPost | null
 
     // Fetch tags for the post
     const { data: tags, error: tagsError } = await supabase
+        .schema('se_home')
         .from('blog_posts_tags_associations')
         .select('tag:tags(*)')
         .eq('post', post.id);
@@ -115,6 +120,7 @@ export const createBlogPost = async (
 
     // Create the blog post
     const { data: post, error: postError } = await supabase
+        .schema('se_home')
         .from('blog_posts')
         .insert({
             title,
@@ -137,6 +143,7 @@ export const createBlogPost = async (
 
     // Fetch author
     const { data: author, error: authorError } = await supabase
+        .schema('se_home')
         .from('authors')
         .select('*')
         .eq('id', authorId)

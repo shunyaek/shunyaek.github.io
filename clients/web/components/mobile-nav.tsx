@@ -100,11 +100,11 @@ export function MobileNav() {
               pricing
             </Link>
             <Link
-              href="#contact"
+              href="/connect"
               className="text-lg font-medium transition-colors hover:text-primary font-urbanist"
               onClick={() => setOpen(false)}
             >
-              contact
+              connect
             </Link>
             {/* <div className="flex items-center">
               <span className="text-lg font-medium mr-2 font-urbanist">Theme:</span>
