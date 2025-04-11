@@ -1,10 +1,6 @@
-import { Metadata } from "next"
-import { DashboardContent } from "@/components/dashboard/dashboard-content"
+'use client';
 
-export const metadata: Metadata = {
-    title: "Dashboard | shunyaek.se",
-    description: "Management dashboard for shunyaek.se",
-}
+import { DashboardContent } from "@/components/dashboard/dashboard-content"
 
 export default function DashboardPage() {
     return (

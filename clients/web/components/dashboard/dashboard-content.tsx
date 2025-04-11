@@ -1,3 +1,5 @@
+'use client';
+
 import { useAuth } from "@/lib/supabase/auth-context"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
