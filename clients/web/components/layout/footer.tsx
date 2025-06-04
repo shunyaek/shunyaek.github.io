@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Button } from "@/components/ui/essential/button"
-import { Input } from "@/components/ui/essential/input"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { Facebook, Github, Instagram, Linkedin, Twitter, Mail, Phone } from "lucide-react"
 
 export function Footer() {

@@ -1,5 +1,5 @@
 import { Mail, MessageSquare } from "lucide-react"
-import { CustomButton } from "@/components/ui/essential/custom-button"
+import { CustomButton } from "@/components/ui/custom-button"
 
 interface ContactButtonProps {
   type: "email" | "phone"

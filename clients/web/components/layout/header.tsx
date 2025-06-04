@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
-import { CustomButton } from "@/components/ui/essential/custom-button"
-import { MobileNav } from "@/components/mobile-nav"
+import { CustomButton } from "@/components/ui/custom-button"
+import { MobileNav } from "@/components/layout/mobile-nav"
 
 export function Header() {
     return (

@@ -3,10 +3,10 @@
 import { useState, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Button } from "@/components/ui/essential/button"
-import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/essential/sheet"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet"
 import { ArrowRight, Menu, X } from "lucide-react"
-import { CustomButton } from "@/components/ui/essential/custom-button"
+import { CustomButton } from "@/components/ui/custom-button"
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)

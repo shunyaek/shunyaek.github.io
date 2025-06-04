@@ -1,8 +1,7 @@
 "use client"
 
 import { useMediaQuery } from "usehooks-ts"
-
-const MOBILE_BREAKPOINT = 768
+import { MOBILE_BREAKPOINT } from "@/lib/constants"
 
 export function useIsMobile() {
   return !useMediaQuery(`(min-width: ${MOBILE_BREAKPOINT}px)`)

@@ -4,7 +4,7 @@ import Image from "next/image"
 import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
 import { useCallback, useEffect, useState, useReducer } from "react"
 import useEmblaCarousel from "embla-carousel-react"
-import { CustomButton } from "@/components/ui/essential/custom-button"
+import { CustomButton } from "@/components/ui/custom-button"
 import { useThemeDetection } from "@/hooks/use-theme-detection"
 import styles from "@/styles/components/hero-section.module.css"
 

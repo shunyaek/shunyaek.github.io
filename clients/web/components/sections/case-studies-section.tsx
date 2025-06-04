@@ -4,9 +4,9 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/essential/card"
-import { CustomButton } from "@/components/ui/essential/custom-button"
-import { Pill } from "@/components/ui/essential/pill"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { CustomButton } from "@/components/ui/custom-button"
+import { Pill } from "@/components/ui/pill"
 
 interface CaseStudy {
   id: string

@@ -1,6 +1,6 @@
 import Image from "next/image"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/essential/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/essential/tabs"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Quote } from "lucide-react"
 
 export function TestimonialSection() {

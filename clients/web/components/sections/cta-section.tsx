@@ -1,7 +1,7 @@
 "use client"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/essential/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
-import { CustomButton } from "@/components/ui/essential/custom-button"
+import { CustomButton } from "@/components/ui/custom-button"
 import { useThemeDetection } from "@/hooks/use-theme-detection"
 
 export function CtaSection() {

@@ -1,6 +1,6 @@
 "use client"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/essential/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/essential/tabs"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Code, Cloud, Smartphone, LineChart, Cpu, Globe, PenTool, Shield, Briefcase } from "lucide-react"
 import Image from "next/image"
 
