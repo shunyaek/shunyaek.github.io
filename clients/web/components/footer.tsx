@@ -3,24 +3,10 @@ import Image from "next/image"
 import { Button } from "@/components/ui/essential/button"
 import { Input } from "@/components/ui/essential/input"
 import { Facebook, Github, Instagram, Linkedin, Twitter, Mail, Phone } from "lucide-react"
-import { NewsletterSubscription } from "@/components/newsletter-subscription"
 
 export function Footer() {
   return (
     <>
-      {/* Newsletter Section */}
-      <section className="bg-muted/50 py-10 w-full border-t border-b">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4 font-playfair">Subscribe to Our Newsletter</h3>
-            <p className="text-muted-foreground mb-6 font-urbanist">
-              Stay updated with the latest news, features, and announcements from shunyaek.se
-            </p>
-            <NewsletterSubscription />
-          </div>
-        </div>
-      </section>
-
       {/* Main Footer */}
       <footer className="w-full bg-muted py-12 md:py-16">
         <div className="container px-4 md:px-6">
@@ -69,11 +55,6 @@ export function Footer() {
                 <li>
                   <Link href="/careers" className="text-muted-foreground hover:text-foreground font-urbanist">
                     Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-muted-foreground hover:text-foreground font-urbanist">
-                    Blog
                   </Link>
                 </li>
                 <li>

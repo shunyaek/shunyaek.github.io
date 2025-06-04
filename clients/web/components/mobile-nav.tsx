@@ -78,13 +78,6 @@ export function MobileNav() {
             >
               Case Studies
             </Link> */}
-            {/* <Link
-              href="/blog"
-              className="text-lg font-medium transition-colors hover:text-primary font-urbanist"
-              onClick={() => setOpen(false)}
-            >
-              Blog
-            </Link> */}
             <Link
               href="#testimonials"
               className="text-lg font-medium transition-colors hover:text-primary font-urbanist"

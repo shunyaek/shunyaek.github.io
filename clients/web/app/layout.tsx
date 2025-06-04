@@ -3,8 +3,6 @@ import type { Metadata } from "next"
 import { Playfair_Display, Urbanist } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { ApolloWrapper } from "@/components/providers/ApolloWrapper"
-import { AuthProvider } from "@/lib/supabase/auth-context"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Toaster } from "sonner"
@@ -36,8 +34,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${playfair.variable} ${urbanist.variable} font-sans`}>
-        <ApolloWrapper>
-          <AuthProvider>
             <ThemeProvider>
               <div className="w-full flex min-h-screen flex-col items-center justify-start">
                 <a
@@ -53,9 +49,7 @@ export default function RootLayout({
                 <Footer />
                 <Toaster />
               </div>
-            </ThemeProvider>
-          </AuthProvider>
-        </ApolloWrapper>
+        </ThemeProvider>
       </body>
     </html>
   )

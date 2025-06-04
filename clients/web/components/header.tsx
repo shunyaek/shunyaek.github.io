@@ -22,9 +22,6 @@ export function Header() {
                     {/* <Link href="#case-studies" className="nav-link">
                         Case Studies
                     </Link> */}
-                    {/* <Link href="/blog" className="nav-link">
-                        Blog
-                    </Link> */}
                     <Link href="#testimonials" className="nav-link">
                         Testimonials
                     </Link>
