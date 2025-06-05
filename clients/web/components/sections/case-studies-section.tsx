@@ -1104,7 +1104,7 @@ export function CaseStudiesSection() {
   const visibleCaseStudies = caseStudies.slice(activeIndex, activeIndex + visibleCount)
 
   return (
-    <section id="case-studies" className="py-20 md:py-32 bg-muted/30">
+    <section id="case-studies" className="">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-12 md:mb-16">
           <div className="inline-flex items-center rounded-full border bg-background px-3 py-1 text-sm mb-4">

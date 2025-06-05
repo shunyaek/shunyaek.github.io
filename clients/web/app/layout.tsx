@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${playfair.variable} ${urbanist.variable} font-sans`}>
             <ThemeProvider>
-              <div className="w-full flex min-h-screen flex-col items-center justify-start">
+          <div className="w-full flex min-h-screen flex-col">
                 <a
                   href="#main-content"
                   className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-background focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
@@ -43,10 +43,9 @@ export default function RootLayout({
                   Skip to main content
                 </a>
                 <Header />
-                <main id="main-content" className="flex-1 w-full">
+            <main id="main-content" className="flex-1 w-full relative">
                   {children}
-                </main>
-                <Footer />
+            </main>
                 <Toaster />
               </div>
         </ThemeProvider>
