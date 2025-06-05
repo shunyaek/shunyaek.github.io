@@ -131,33 +131,10 @@ export function HeroSection() {
               </span>
             </h1>
             <p className="lead-text">
-              At shunyaek.se, we help businesses leverage cutting-edge technology to drive growth, efficiency, and
-              innovation in today's competitive landscape.
+              @shunyaek.se, we’re a small but mighty software and technology consulting agency, dedicated to transforming the digital landscape with precision and flair. we take the fundamental elements of technology — zeros and ones — and craft them into exceptional products and platforms that stand out in today’s market.
             </p>
             <div className="flex mt-4">
               <CustomButton href="/connect" />
-            </div>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="inline-block h-8 w-8 rounded-full border-2 border-background bg-muted overflow-hidden"
-                  >
-                    <Image
-                      src={`/placeholder.svg?height=32&width=32`}
-                      alt="User"
-                      width={32}
-                      height={32}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="text-sm text-muted-foreground font-urbanist">
-                <span className="font-medium">500+</span> satisfied clients worldwide
-              </div>
             </div>
           </div>
           <div className="relative mx-auto lg:ml-auto">

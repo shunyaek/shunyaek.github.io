@@ -692,14 +692,377 @@ const caseStudyMarketingCopilot: CaseStudy = {
   externalLink: ""
 };
 
+const caseStudyCloudFinOpsPortal: CaseStudy = {
+  /* — Snapshot — */
+  id: "cloud-finops-portal",
+  title: "FinOps Cost Governance for Cloud Resources",
+  domain: "Cloud Resource Management & Cost Governance",
+  engagement: "Front-end Architecture · Design-System Leadership · Developer Enablement",
+  timeline: "Nov 2023 – Nov 2024 (12 mos)",
+  techHighlights: [
+    "React",
+    "TypeScript",
+    "Fluent UI",
+    "XState",
+    "ImmerJS",
+    "React Query",
+    "Jest",
+    "React-Testing-Library",
+    "Storybook",
+    "Vite"
+  ],
+
+  /* — Narrative — */
+  snapshot:
+    "Led the front-end rebuild of a global payments provider's internal cloud-budgeting portal: delivered a Fluent-UI design-system, XState-driven request wizard, and real-time cost dashboards—cutting ticket cycles from 7 days to 32 hours and achieving 99/100 Lighthouse accessibility.",
+
+  challenge:
+    "Siloed spreadsheets and ticket queues slowed cloud requests and obscured spend. A responsive, accessible web app with live cost validation was required, built to the client's industry-leading design standards and shipped within a year.",
+
+  goals: {
+    primaryObjective:
+      "Reduce infra request-to-approval time by at least 75 % through a self-service portal.",
+    kpis: [
+      "Cut cycle time from 7 days to <36 h",
+      "Achieve ≥90 % design-system adoption across internal apps",
+      "Reach ≥85 % unit + integration test coverage",
+      "Score ≥98 % on Lighthouse accessibility"
+    ]
+  },
+
+  /* — Delivery — */
+  team: [
+    {
+      role: "Consulting Front-end Lead",
+      scope: "Architecture, component library, XState flows",
+      effortPercentage: 60
+    },
+    {
+      role: "Design-system Steward",
+      scope: "Tokens, theming, Storybook documentation",
+      effortPercentage: 20
+    },
+    {
+      role: "Testing & Dev-Experience Advocate",
+      scope: "Jest/RTL suites, CI gates, performance tuning",
+      effortPercentage: 20
+    }
+  ],
+
+  approach: [
+    "Implemented Fluent UI design-tokens and built 55 reusable components in Storybook",
+    "Modelled complex approval logic with XState and shared JSON charts with BE validation",
+    "Leveraged ImmerJS for immutable form drafts and React Query for live cost estimates (<800 ms)",
+    "Integrated Lighthouse-CI, axe-core, and Chromatic into GitHub Actions for a11y and visual regression gates",
+    "Adopted Vite + esbuild for 2× faster local feedback loops and <1 s HMR",
+    "Bridged OAuth2 auth and RBAC with typed OpenAPI hooks, ensuring secure per-role data access"
+  ],
+
+  solutionHighlights: [
+    "Dynamic request wizard with policy-aware fields and cost deltas",
+    "Real-time cost dashboard updating via web-socket streams",
+    "One-click decommission workflow with reversible grace period",
+    "Dark/Light theming via design tokens; no custom CSS overrides",
+    "CI pipeline enforces >85 % coverage and 98+ a11y before merge"
+  ],
+
+  /* — Outcomes — */
+  impact: [
+    { metric: "Request-to-approval cycle (hrs)", before: 168, after: 32, delta: "-81 %" },
+    { metric: "Design-system adoption (apps)", before: 0, after: 6, delta: "+6" },
+    { metric: "Test coverage (%)", before: 42, after: 88, delta: "+46 pp" },
+    { metric: "Lighthouse accessibility score", before: 79, after: 99, delta: "+20" }
+  ],
+
+  keyLearnings: [
+    "State-machine diagrams streamline complex approval logic and QA",
+    "Design-tokens unify UI and accelerate new team onboarding",
+    "Automated a11y/performance gates maintain quality without manual policing"
+  ],
+
+  /* — Extras — */
+  visualAsset: "/images/case-studies/payments.png",
+  nextSteps: [
+    "Incorporate AI-based resource right-sizing suggestions",
+    "Publish GraphQL façade and component package for other internal tools"
+  ],
+  externalLink: ""
+};
+
+const caseStudyDataPlatformNGO: CaseStudy = {
+  /* — Snapshot — */
+  id: "data-platform-modernisation-ngo",
+  title: "Unified Data & Platform Modernization for Non-Profits",
+  domain: "Social-Impact Data Consulting & Analytics",
+  engagement: "Data Engineering · ETL Automation · BI Enablement",
+  timeline: "Feb 2023 – Oct 2023 (9 mos)",
+  techHighlights: [
+    "Python",
+    "FastAPI",
+    "Celery",
+    "Azure Data Factory",
+    "Microsoft SQL Server",
+    "Tableau",
+    "Power BI",
+    "Jupyter Notebooks",
+    "WSL",
+    "Windows Server",
+    "Docker",
+    "XML",
+    "WSDL",
+    "SOAP",
+    "REST"
+  ],
+
+  /* — Narrative — */
+  snapshot:
+    "Delivered a unified, auditable data platform that refreshes key dashboards in under 30 minutes, boosts reconciliation accuracy to 99.7 %, and slashes ad-hoc script maintenance by 85 %.",
+
+  challenge:
+    "Legacy scripts and SSIS jobs ingested disparate CRM and government feeds via SOAP, leading to 24-hour reporting lags and audit pain. The organisation needed a modern, low-latency pipeline with governed BI layers.",
+
+  goals: {
+    primaryObjective:
+      "Cut reporting latency from next-day to near-real-time while improving data quality and developer productivity.",
+    kpis: [
+      "ETL latency ≤30 min",
+      "Data reconciliation accuracy ≥99.5 %",
+      "Dashboard build time ≤2 days",
+      "Reduce ad-hoc script maintenance ≥80 %"
+    ]
+  },
+
+  /* — Delivery — */
+  team: [
+    { role: "Lead Data Engineer", scope: "Pipeline design, FastAPI services", effortPercentage: 60 },
+    { role: "BI & Visualisation Engineer", scope: "Tableau / Power BI models", effortPercentage: 25 },
+    { role: "DevOps Contributor", scope: "Docker, CI/CD, monitoring", effortPercentage: 15 }
+  ],
+
+  approach: [
+    "Built Azure Data Factory pipelines to stage SOAP/XML and REST JSON feeds into SQL Server",
+    "Developed FastAPI micro-services for schema normalisation and ingestion logging",
+    "Orchestrated heavy transforms with Celery on Docker/WSL within Windows Server",
+    "Implemented metadata-driven data-quality checks with rule outcomes stored for audit",
+    "Created semantic layers and governed measures in Tableau & Power BI",
+    "Automated notebook-based tests with PyTest/nbval to document and validate every pipeline"
+  ],
+
+  solutionHighlights: [
+    "SOAP-to-SQL bridge ingests 2 k+ records/min with zero loss",
+    "CDC module trims nightly load times by 67 %",
+    "YAML-driven KPI builder spins up new dashboards in <2 days",
+    "Dynamic SLA monitor posts latency and quality metrics to collaboration chat"
+  ],
+
+  /* — Outcomes — */
+  impact: [
+    { metric: "ETL latency (min)", before: 1440, after: 26, delta: "-98 %" },
+    { metric: "Reconciliation accuracy (%)", before: 96.8, after: 99.7, delta: "+2.9 pp" },
+    { metric: "Dashboard build time (days)", before: 10, after: 2, delta: "-80 %" },
+    { metric: "Monthly script maintenance (hrs)", before: 40, after: 6, delta: "-85 %" }
+  ],
+
+  keyLearnings: [
+    "Notebook-to-task conversion keeps research and production in sync",
+    "Metadata quality rules detect schema drift early",
+    "Wrapping legacy SOAP feeds with modern APIs saves rewrite costs"
+  ],
+
+  /* — Extras — */
+  visualAsset: "/images/case-studies/data-engineering.png",
+  nextSteps: [
+    "Move CDC pipeline to Azure Synapse for lakehouse scalability",
+    "Introduce AutoML-based donor-churn predictions"
+  ],
+  externalLink: ""
+};
+
+const caseStudySocialFundraisingPlatform: CaseStudy = {
+  /* — Snapshot — */
+  id: "social-fundraising-network",
+  title: "Cloud-Native Social Fundraising Network",
+  domain: "Digital Fundraising & Volunteer Engagement",
+  engagement: "Front-End MVP · Cloud-Native Automation · Micro-Service Factory",
+  timeline: "Feb 2023 – May 2025 (22 mos)",
+  techHighlights: [
+    "TypeScript",
+    "React",
+    "Tailwind CSS",
+    "Zustand",
+    "React Query",
+    "XState",
+    "Python",
+    "FastAPI",
+    "Kubernetes",
+    "Docker",
+    "Pulumi",
+    "Spotify Backstage",
+    "GitHub Actions"
+  ],
+
+  /* — Narrative — */
+  snapshot:
+    "Delivered a full-stack social-impact platform: first an accessible React MVP, then a form-to-pod micro-service factory on Kubernetes that spins up new services in under 15 minutes and sustains 99.9 % uptime under 3× load.",
+
+  challenge:
+    "The startup needed to launch quickly yet scale features without a large platform team. Manual micro-service scaffolding slowed iteration and risked config drift across environments.",
+
+  goals: {
+    primaryObjective:
+      "Launch MVP fast and enable near-instant micro-service creation to keep pace with new social-good initiatives.",
+    kpis: [
+      "≥4 releases/week post-MVP",
+      "New micro-service live in ≤15 min",
+      "Maintain 99.9 % availability during 3× traffic spikes",
+      "CI main-branch pass rate ≥95 %"
+    ]
+  },
+
+  /* — Delivery — */
+  team: [
+    { role: "Senior Front-end Engineer", scope: "Design system, React SPA, CI", effortPercentage: 40 },
+    { role: "Lead Platform Engineer", scope: "Kubernetes architecture, Pulumi IaC", effortPercentage: 40 },
+    { role: "Automation Engineer", scope: "Form-to-pod generator, Backstage templates", effortPercentage: 20 }
+  ],
+
+  approach: [
+    "Created Tailwind-based design tokens and 40+ Radix-style components in Storybook",
+    "Implemented state-machine flows (XState) for onboarding, posts, and donations",
+    "Built a low-code schema wizard that generates FastAPI scaffolds and deployment manifests",
+    "Automated CI/CD via GitHub Actions → Docker build → Pulumi deploy → EKS",
+    "Integrated Backstage service catalog to enforce docs/SLOs at service creation",
+    "Set up Loki, Tempo, Grafana, and Slack alerts for full-stack observability"
+  ],
+
+  solutionHighlights: [
+    "Form-to-pod pipeline provisions new micro-services in <15 min",
+    "Backstage templates ensure every service has ownership, run-books, and SLOs",
+    "KEDA-based autoscaling trims compute by ~38 % month-over-month",
+    "Offline-first PWA queue sync keeps pledges reliable on poor networks"
+  ],
+
+  /* — Outcomes — */
+  impact: [
+    { metric: "Feature releases per week", before: "—", after: 4.3, delta: "N/A" },
+    { metric: "Service spin-up time (min)", before: 1440, after: 14, delta: "-99 %" },
+    { metric: "Deploys per day", before: 1, after: 7, delta: "+600 %" },
+    { metric: "Uptime during spikes (%)", before: 97.5, after: 99.94, delta: "+2.44 pp" }
+  ],
+
+  keyLearnings: [
+    "State machines reduce logic bugs in social workflows",
+    "Service catalogs with baked-in SLOs eliminate ownership gaps",
+    "Pulumi’s fast feedback loop fits small teams better than static YAML"
+  ],
+
+  /* — Extras — */
+  visualAsset: "/images/case-studies/good.png",
+  nextSteps: [
+    "Implement regional sharding for multi-tenant nonprofits",
+    "Adopt React server-side streaming to improve first-paint on slow networks"
+  ],
+  externalLink: ""
+};
+
+const caseStudySocSaaS: CaseStudy = {
+  /* — Snapshot — */
+  id: "soc-saas-platform",
+  title: "Cloud-Native SOC-as-a-Service Platform",
+  domain: "Cyber-Security Monitoring & Incident Response",
+  engagement: "Full-Stack SaaS Build · Web & Mobile · Cloud Native",
+  timeline: "Jan 2025 – Jun 2025 (6 mos)",
+  techHighlights: [
+    "Next.js",
+    "TypeScript",
+    "Mantine",
+    "EmotionJS",
+    "React Native (Expo)",
+    "Python",
+    "Starlette",
+    "PostgreSQL",
+    "AuthJS",
+    "Docker",
+    "Kubernetes",
+    "GitHub Actions"
+  ],
+
+  /* — Narrative — */
+  snapshot:
+    "Delivered a multi-tenant SOC-as-a-Service platform that ingests logs in real time, surfaces AI-scored threats on web & mobile, and onboards new customers in under 15 minutes.",
+
+  challenge:
+    "Manual MSSP workflows delayed onboarding and incident response. A cloud-native portal was needed to automate provisioning, alerting, and compliance reporting without inflating ops head-count.",
+
+  goals: {
+    primaryObjective:
+      "Ship MVP in <6 months and achieve sub-minute alert latency.",
+    kpis: [
+      "Tenant onboarding wizard ≤15 min",
+      "Alert latency ≤60 sec",
+      "Mobile push latency ≤5 sec",
+      "CI main-branch green rate ≥95 %"
+    ]
+  },
+
+  /* — Delivery — */
+  team: [
+    { role: "Full-stack Lead", scope: "Next.js web, design system, mobile app", effortPercentage: 45 },
+    { role: "Platform & API Engineer", scope: "Starlette services, AuthJS, DB schema", effortPercentage: 35 },
+    { role: "Dev-Ops & SRE Advocate", scope: "Docker, K8s, CI/CD, monitoring", effortPercentage: 20 }
+  ],
+
+  approach: [
+    "Created Mantine + EmotionJS design tokens; 35 reusable components documented in Storybook",
+    "Implemented multi-tenant auth with AuthJS and PostgreSQL RLS",
+    "Built Starlette API, Kafka pipeline, anomaly-scoring worker pods",
+    "Developed Next.js dashboard (web-sockets) and Expo mobile app with shared GraphQL layer",
+    "CI/CD pipeline with Trivy & OPA gates, helm deploys on managed K8s",
+    "Synthetic k6 tests enforce <60 sec alert-delivery SLA before merge"
+  ],
+
+  solutionHighlights: [
+    "Self-service onboarding wizard provisions full tenant stack in <15 min",
+    "Live threat map & drill-down dashboards refresh every 5 sec",
+    "Mobile SOC companion app delivers push alerts with swipe-to-ack",
+    "Autoscaling via KEDA saves 30 % compute during low-traffic hours"
+  ],
+
+  /* — Outcomes — */
+  impact: [
+    { metric: "Onboarding time (min)", before: 2880, after: 14, delta: "-99 %" },
+    { metric: "Alert latency (sec)", before: 180, after: 48, delta: "-73 %" },
+    { metric: "Ops hours/tenant/month", before: 12, after: 2, delta: "-83 %" },
+    { metric: "Mobile push latency (sec)", before: "—", after: 4.2, delta: "n/a" }
+  ],
+
+  keyLearnings: [
+    "Shared design tokens accelerate cross-platform parity",
+    "PostgreSQL RLS offers simple, robust multitenancy for SMB SOC workloads",
+    "Embedding SLA performance tests in CI prevents regressions"
+  ],
+
+  /* — Extras — */
+  visualAsset: "/images/case-studies/soc.png",
+  nextSteps: [
+    "Introduce MITRE-aligned auto-response playbooks",
+    "Enable customer-managed encryption keys for regulated verticals"
+  ],
+  externalLink: ""
+};
+
 export function CaseStudiesSection() {
   const caseStudies: CaseStudy[] = [
     caseStudyPrivateCloudAutomation,
-    caseStudyTechDataConsulting,
     caseStudySustainabilityPlatform,
+    caseStudyCloudFinOpsPortal,
     caseStudyAirlineRevenueAI,
+    caseStudyDataPlatformNGO,
     caseStudyFmcgPromoAI,
+    caseStudyTechDataConsulting,
     caseStudyMarketingCopilot,
+    caseStudySocialFundraisingPlatform,
+    caseStudySocSaaS,
   ]
 
   const [activeIndex, setActiveIndex] = useState(0)
@@ -847,13 +1210,6 @@ export function CaseStudiesSection() {
               </Card>
             ))}
           </div>
-        </div>
-
-        <div className="flex justify-center mt-12">
-          <CustomButton href="/case-studies" className="inline-flex items-center">
-            View All Case Studies
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </CustomButton>
         </div>
       </div>
     </section>
