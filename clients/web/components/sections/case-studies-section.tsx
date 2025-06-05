@@ -130,7 +130,7 @@ const caseStudySustainabilityPlatform: CaseStudy = {
 
   approach: [
     "Provisioned a bespoke Keycloak cluster with tenant-aware RBAC and OIDC tokens",
-    "Designed FastAPI micro-services that wrap the platform’s ML library for hotspot analytics and scenario simulations",
+    "Designed FastAPI micro-services that wrap the platform's ML library for hotspot analytics and scenario simulations",
     "Adopted contract-first APIs (OpenAPI 3) to auto-generate TypeScript clients and keep FE/BE in sync",
     "Built high-density UI components (Material UI, ReCharts, TanStack Table) with virtual scrolling for 10 k-row data sets",
     "Automated multi-stage Docker builds and blue-green deploys through GitHub Actions"
@@ -251,7 +251,7 @@ const caseStudyPrivateCloudAutomation: CaseStudy = {
   ],
 
   approach: [
-    "Modelled VMware and Kubernetes estates with Ansible playbooks and Terraform-style blueprints aligned to Dell VxRail “always-on” reference architecture",
+    "Modelled VMware and Kubernetes estates with Ansible playbooks and Terraform-style blueprints aligned to Dell VxRail 'always-on' reference architecture",
     "Built a Django-React portal wrapping Jenkins pipelines that auto-generated change tickets, embedded policy gates, and slashed approval overhead by 87 %",
     "Integrated Oracle Health security baselines (OHAI) into image-bake pipeline to enforce CIS controls at build time",
     "Deployed Elastic Stack + New Relic APM for unified logs, metrics, tracing and MTTK dashboards",
@@ -953,7 +953,7 @@ const caseStudySocialFundraisingPlatform: CaseStudy = {
   keyLearnings: [
     "State machines reduce logic bugs in social workflows",
     "Service catalogs with baked-in SLOs eliminate ownership gaps",
-    "Pulumi’s fast feedback loop fits small teams better than static YAML"
+    "Pulumi's fast feedback loop fits small teams better than static YAML"
   ],
 
   /* — Extras — */
@@ -1065,150 +1065,109 @@ export function CaseStudiesSection() {
     caseStudySocSaaS,
   ]
 
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [visibleCount, setVisibleCount] = useState(3)
-  const [animating, setAnimating] = useState(false)
+  const [cardMinWidth, setCardMinWidth] = useState(400)
 
-  // Update visible count based on screen size
-  const updateVisibleCount = () => {
+  // Update card width based on screen size
+  const updateCardWidth = () => {
+    if (typeof window === 'undefined') return
+
     if (window.innerWidth < 768) {
-      setVisibleCount(1)
+      setCardMinWidth(300)
     } else if (window.innerWidth < 1024) {
-      setVisibleCount(2)
+      setCardMinWidth(350)
     } else {
-      setVisibleCount(3)
+      setCardMinWidth(400)
     }
   }
 
-  // Initialize visible count on component mount
+  // Initialize card width on component mount
   useEffect(() => {
-    updateVisibleCount()
-    window.addEventListener("resize", updateVisibleCount)
-    return () => window.removeEventListener("resize", updateVisibleCount)
+    updateCardWidth()
+    window.addEventListener("resize", updateCardWidth)
+    return () => window.removeEventListener("resize", updateCardWidth)
   }, [])
-
-  const nextSlide = () => {
-    if (animating) return
-    setAnimating(true)
-    setActiveIndex((prev) => (prev + 1) % (caseStudies.length - visibleCount + 1))
-    setTimeout(() => setAnimating(false), 500)
-  }
-
-  const prevSlide = () => {
-    if (animating) return
-    setAnimating(true)
-    setActiveIndex((prev) => (prev === 0 ? caseStudies.length - visibleCount : prev - 1))
-    setTimeout(() => setAnimating(false), 500)
-  }
-
-  const visibleCaseStudies = caseStudies.slice(activeIndex, activeIndex + visibleCount)
 
   return (
     <section id="case-studies" className="">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center rounded-full border bg-background px-3 py-1 text-sm mb-4">
-            <span className="font-medium font-urbanist">Case Studies</span>
-            <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
-            <span className="text-muted-foreground font-urbanist">Success Stories</span>
-          </div>
-          <h2 className="section-title">Our Work in Action</h2>
-          <p className="section-description mx-auto">
-            Explore how we've helped businesses across various industries overcome challenges and achieve their goals
-            with innovative digital solutions.
-          </p>
-        </div>
-
-        <div className="relative">
-          {/* Navigation buttons */}
-          <div className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-10">
-            <button
-              onClick={prevSlide}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-background text-foreground shadow-md hover:bg-muted transition-colors"
-              aria-label="Previous case study"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-          </div>
-          <div className="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-10">
-            <button
-              onClick={nextSlide}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-background text-foreground shadow-md hover:bg-muted transition-colors"
-              aria-label="Next case study"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Case studies grid/carousel */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 ease-in-out">
-            {visibleCaseStudies.map((study) => (
-              <Card
-                key={study.id}
-                className="group border bg-background transition-all duration-300 hover:brand-shadow hover:scale-[1.02] flex flex-col h-full"
-              >
-                <div className="relative aspect-video overflow-hidden rounded-t-lg">
-                  <Image
-                    src={study.visualAsset || "/placeholder.svg"}
-                    alt={study.title}
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full transition-transform group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-100 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                    <div className="text-white">
-                      <p className="font-medium text-3xl font-playfair">{study.title}</p>
-                      <p className="text-md font-urbanist">{study.domain}</p>
-                    </div>
-                  </div>
-                </div>
-                <CardHeader className="pb-2">
-                  {/* <CardTitle className="card-title">{study.title}</CardTitle> */}
-                  <CardDescription className="card-description">{study.snapshot}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold font-playfair text-sm">Challenge</h4>
-                      <p className="text-sm text-muted-foreground font-urbanist">{study.challenge}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold font-playfair text-sm">Primary Goal</h4>
-                      <p className="text-sm text-muted-foreground font-urbanist">{study.goals.primaryObjective}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold font-playfair text-sm">Key Impact</h4>
-                      <div className="space-y-1">
-                        {study.impact.slice(0, 2).map((metric, idx) => (
-                          <p key={idx} className="text-sm text-muted-foreground font-urbanist">
-                            <span className="font-medium">{metric.metric}:</span> {metric.before} → {metric.after}
-                            <span className="text-primary font-medium ml-1">({metric.delta})</span>
-                          </p>
-                        ))}
+      {/* Wider container for peek effect */}
+      <div className="w-full overflow-hidden">
+        <div className="relative max-w-full px-4 md:px-6">
+          <div className="relative">
+            {/* Horizontal scrolling carousel with mouse/touchpad scroll */}
+            <div className="overflow-x-auto overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing mx-4 md:mx-6">
+              <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
+                {caseStudies.map((study) => (
+                  <Card
+                    key={study.id}
+                    className="group border bg-background transition-all duration-300 hover:brand-shadow hover:scale-[1.02] flex flex-col flex-shrink-0"
+                    style={{
+                      width: `${cardMinWidth}px`,
+                      minWidth: `${cardMinWidth}px`
+                    }}
+                  >
+                    <div className="relative aspect-video overflow-hidden rounded-t-lg">
+                      <Image
+                        src={study.visualAsset || "/placeholder.svg"}
+                        alt={study.title}
+                        width={600}
+                        height={400}
+                        className="object-cover w-full h-full transition-transform group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-100 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <div className="text-white">
+                          <p className="font-medium text-2xl md:text-3xl font-playfair">{study.title}</p>
+                          <p className="text-sm md:text-md font-urbanist">{study.domain}</p>
+                        </div>
                       </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold font-playfair text-sm">Technologies</h4>
-                      <div className="flex flex-wrap gap-2 mt-1">
-                        {study.techHighlights.slice(0, 4).map((tech) => (
-                          <Pill key={tech} variant={"gradient"}>{tech}</Pill>
-                        ))}
-                        {study.techHighlights.length > 4 && (
-                          <Pill variant={"outline"}>+{study.techHighlights.length - 4}</Pill>
-                        )}
+                    <CardHeader className="pb-2">
+                      <CardDescription className="card-description">{study.snapshot}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold font-playfair text-sm">Challenge</h4>
+                          <p className="text-sm text-muted-foreground font-urbanist">{study.challenge}</p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold font-playfair text-sm">Primary Goal</h4>
+                          <p className="text-sm text-muted-foreground font-urbanist">{study.goals.primaryObjective}</p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold font-playfair text-sm">Key Impact</h4>
+                          <div className="space-y-1">
+                            {study.impact.slice(0, 2).map((metric, idx) => (
+                              <p key={idx} className="text-sm text-muted-foreground font-urbanist">
+                                <span className="font-medium">{metric.metric}:</span> {metric.before} → {metric.after}
+                                <span className="text-primary font-medium ml-1">({metric.delta})</span>
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold font-playfair text-sm">Technologies</h4>
+                          <div className="flex flex-wrap gap-2 mt-1">
+                            {study.techHighlights.slice(0, 4).map((tech) => (
+                              <Pill key={tech} variant={"gradient"}>{tech}</Pill>
+                            ))}
+                            {study.techHighlights.length > 4 && (
+                              <Pill variant={"outline"}>+{study.techHighlights.length - 4}</Pill>
+                            )}
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold font-playfair text-sm">Timeline & Engagement</h4>
+                          <p className="text-sm text-muted-foreground font-urbanist">{study.timeline}</p>
+                          <p className="text-sm text-muted-foreground font-urbanist">{study.engagement}</p>
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold font-playfair text-sm">Timeline & Engagement</h4>
-                      <p className="text-sm text-muted-foreground font-urbanist">{study.timeline}</p>
-                      <p className="text-sm text-muted-foreground font-urbanist">{study.engagement}</p>
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="pt-4 mt-auto">
-                </CardFooter>
-              </Card>
-            ))}
+                    </CardContent>
+                    <CardFooter className="pt-4 mt-auto">
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

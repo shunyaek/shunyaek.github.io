@@ -2,16 +2,17 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Facebook, Github, Instagram, Linkedin, Twitter, Mail, Phone } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const quickLinks = [
+  const navigationLinks = [
     { label: "about", href: "#section-0" },
+    { label: "approach", href: "#section-1" },
+    { label: "methodology", href: "#section-2" },
+    { label: "edge", href: "#section-3" },
     { label: "services", href: "#section-4" },
+    { label: "focus", href: "#section-5" },
     { label: "work", href: "#section-6" },
     { label: "connect", href: "#section-7" }
   ]
@@ -34,20 +35,17 @@ export function Footer() {
               </p>
             </div>
 
-            {/* Quick navigation */}
-            <div className="flex items-center gap-6">
-              <span className="text-sm font-medium text-muted-foreground">Quick Links:</span>
-              <div className="flex items-center gap-3">
-                {quickLinks.map((link, index) => (
-                  <Link
-                    key={index}
-                    href={link.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 px-3 py-1 rounded-full hover:bg-white/10"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
+            {/* Navigation Links */}
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {navigationLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 px-3 py-1 rounded-full hover:bg-white/10"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
 
             {/* Copyright */}
