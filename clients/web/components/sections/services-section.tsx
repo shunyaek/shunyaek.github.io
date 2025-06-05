@@ -37,18 +37,19 @@ export function ServicesSection() {
   return (
     <section className="w-full min-h-screen flex items-center justify-center snap-start py-12">
       <div className="container relative z-10 px-4 md:px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-sm mb-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6">
             <span className="font-medium font-urbanist">services</span>
             <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
-            <span className="text-muted-foreground italic font-urbanist">engineering across the stack, designed for scale</span>
+            <span className="text-muted-foreground italic font-urbanist hidden sm:inline">engineering across the stack, designed for scale</span>
+            <span className="text-muted-foreground italic font-urbanist sm:hidden">engineering across the stack, designed for scale</span>
           </div>
 
-          <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter mb-4 sm:mb-6">
             <span className="brand-gradient-text">full-spectrum</span> technology services
           </h2>
 
-          <p className="lead-text text-lg max-w-4xl mx-auto">
+          <p className="lead-text text-base sm:text-lg max-w-4xl mx-auto px-2 sm:px-0">
             from code to cloud — engineered with precision, delivered with purpose. we work as your technical co-founder,
             embedded engineering team, or trusted consulting partner.
           </p>

@@ -8,20 +8,21 @@ export function FocusSection() {
   ]
 
   return (
-    <section className="w-full h-screen flex items-center justify-center snap-start">
+    <section className="w-full min-h-screen h-auto md:h-screen flex items-center justify-center snap-start py-8 md:py-0">
       <div className="container relative z-10 px-4 md:px-6 max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-sm mb-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6">
             <span className="font-medium font-urbanist">focus</span>
             <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
-            <span className="text-muted-foreground italic font-urbanist">depth over domain, intent over industry</span>
+            <span className="text-muted-foreground italic font-urbanist hidden sm:inline">depth over domain, intent over industry</span>
+            <span className="text-muted-foreground italic font-urbanist sm:hidden">depth over domain, intent over industry</span>
           </div>
 
-          <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter mb-4 sm:mb-6">
             we work with <span className="brand-gradient-text">organizations who value craftsmanship</span>
           </h2>
 
-          <p className="lead-text text-lg max-w-3xl mx-auto">
+          <p className="lead-text text-base sm:text-lg max-w-3xl mx-auto px-2 sm:px-0">
             regardless of industry or size, we're drawn to teams that share our commitment to thoughtful engineering
             and sustainable growth.
           </p>

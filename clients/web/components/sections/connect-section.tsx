@@ -4,22 +4,23 @@ import { CustomButton } from "@/components/ui/custom-button"
 
 export function ConnectSection() {
   return (
-    <section className="w-full h-screen flex items-center justify-center snap-start">
+    <section className="w-full min-h-screen h-auto md:h-screen flex items-center justify-center snap-start py-8 md:py-0">
       <div className="container relative z-10 px-4 md:px-6 max-w-5xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Column - Header */}
           <div>
-            <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-sm mb-6">
+            <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6">
               <span className="font-medium font-urbanist">connect</span>
               <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
-              <span className="text-muted-foreground italic font-urbanist">no pitch. just conversation</span>
+              <span className="text-muted-foreground italic font-urbanist hidden sm:inline">no pitch. just conversation</span>
+              <span className="text-muted-foreground italic font-urbanist sm:hidden">no pitch. just conversation</span>
             </div>
 
-            <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter mb-4 sm:mb-6">
               <span className="brand-gradient-text">let's build something meaningful, together</span>
             </h2>
 
-            <p className="lead-text text-lg mb-8">
+            <p className="lead-text text-base sm:text-lg mb-6 sm:mb-8 px-2 sm:px-0">
               we don't do hard sells. we don't do bloated decks. and we definitely don't do copy-paste proposals.
               what we do is listen — really listen.
             </p>

@@ -349,6 +349,39 @@
     display: none;             /* Safari and Chrome */
   }
 
+  /* Smooth scrolling for mobile */
+  .scrollbar-hide {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
+  }
+
+  /* Mobile-specific optimizations */
+  @media (max-width: 768px) {
+    /* Prevent zoom on input focus on iOS */
+    input, textarea, select {
+      font-size: 16px !important;
+    }
+    
+    /* Improve touch targets */
+    button, [role="button"], a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Better spacing for mobile */
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  /* Better text rendering */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   /* Typography utility classes */
   .heading-serif {
     @apply font-playfair font-bold tracking-tight;

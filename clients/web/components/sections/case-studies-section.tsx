@@ -1071,12 +1071,14 @@ export function CaseStudiesSection() {
   const updateCardWidth = () => {
     if (typeof window === 'undefined') return
 
-    if (window.innerWidth < 768) {
-      setCardMinWidth(300)
+    if (window.innerWidth < 480) {
+      setCardMinWidth(280) // Smaller for mobile
+    } else if (window.innerWidth < 768) {
+      setCardMinWidth(320) // Medium mobile/large phone
     } else if (window.innerWidth < 1024) {
-      setCardMinWidth(350)
+      setCardMinWidth(350) // Tablet
     } else {
-      setCardMinWidth(400)
+      setCardMinWidth(400) // Desktop
     }
   }
 
@@ -1094,8 +1096,8 @@ export function CaseStudiesSection() {
         <div className="relative max-w-full px-0 md:px-0">
           <div className="relative">
             {/* Horizontal scrolling carousel with mouse/touchpad scroll */}
-            <div className="px-16 pb-32 pt-12 overflow-x-auto overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing mx-0 md:mx-0">
-              <div className="flex gap-6 p-0" style={{ width: 'max-content' }}>
+            <div className="px-4 sm:px-8 md:px-12 lg:px-16 pb-16 sm:pb-24 md:pb-32 pt-6 sm:pt-8 md:pt-12 overflow-x-auto overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing mx-0">
+              <div className="flex gap-3 sm:gap-4 md:gap-6 p-0" style={{ width: 'max-content' }}>
                 {caseStudies.map((study) => (
                   <Card
                     key={study.id}
@@ -1113,31 +1115,31 @@ export function CaseStudiesSection() {
                         height={400}
                         className="object-cover w-full h-full transition-transform group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-100 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-100 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 md:p-4">
                         <div className="text-white">
-                          <p className="font-medium text-2xl md:text-3xl font-playfair">{study.title}</p>
-                          <p className="text-sm md:text-md font-urbanist">{study.domain}</p>
+                          <p className="font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl font-playfair">{study.title}</p>
+                          <p className="text-xs sm:text-sm md:text-base font-urbanist">{study.domain}</p>
                         </div>
                       </div>
                     </div>
-                    <CardHeader className="pb-2">
-                      <CardDescription className="card-description">{study.snapshot}</CardDescription>
+                    <CardHeader className="pb-2 px-3 sm:px-4 md:px-6 pt-3 sm:pt-4 md:pt-6">
+                      <CardDescription className="card-description text-xs sm:text-sm">{study.snapshot}</CardDescription>
                     </CardHeader>
-                    <CardContent className="flex-grow">
-                      <div className="space-y-4">
+                    <CardContent className="flex-grow px-3 sm:px-4 md:px-6">
+                      <div className="space-y-3 sm:space-y-4">
                         <div>
-                          <h4 className="font-semibold font-playfair text-sm">Challenge</h4>
-                          <p className="text-sm text-muted-foreground font-urbanist">{study.challenge}</p>
+                          <h4 className="font-semibold font-playfair text-xs sm:text-sm">Challenge</h4>
+                          <p className="text-xs sm:text-sm text-muted-foreground font-urbanist">{study.challenge}</p>
                         </div>
                         <div>
-                          <h4 className="font-semibold font-playfair text-sm">Primary Goal</h4>
-                          <p className="text-sm text-muted-foreground font-urbanist">{study.goals.primaryObjective}</p>
+                          <h4 className="font-semibold font-playfair text-xs sm:text-sm">Primary Goal</h4>
+                          <p className="text-xs sm:text-sm text-muted-foreground font-urbanist">{study.goals.primaryObjective}</p>
                         </div>
                         <div>
-                          <h4 className="font-semibold font-playfair text-sm">Key Impact</h4>
+                          <h4 className="font-semibold font-playfair text-xs sm:text-sm">Key Impact</h4>
                           <div className="space-y-1">
                             {study.impact.slice(0, 2).map((metric, idx) => (
-                              <p key={idx} className="text-sm text-muted-foreground font-urbanist">
+                              <p key={idx} className="text-xs sm:text-sm text-muted-foreground font-urbanist">
                                 <span className="font-medium">{metric.metric}:</span> {metric.before} → {metric.after}
                                 <span className="text-primary font-medium ml-1">({metric.delta})</span>
                               </p>
@@ -1145,24 +1147,24 @@ export function CaseStudiesSection() {
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-semibold font-playfair text-sm">Technologies</h4>
-                          <div className="flex flex-wrap gap-2 mt-1">
+                          <h4 className="font-semibold font-playfair text-xs sm:text-sm">Technologies</h4>
+                          <div className="flex flex-wrap gap-1 sm:gap-2 mt-1">
                             {study.techHighlights.slice(0, 4).map((tech) => (
-                              <Pill key={tech} variant={"gradient"}>{tech}</Pill>
+                              <Pill key={tech} variant={"gradient"} className="text-xs">{tech}</Pill>
                             ))}
                             {study.techHighlights.length > 4 && (
-                              <Pill variant={"outline"}>+{study.techHighlights.length - 4}</Pill>
+                              <Pill variant={"outline"} className="text-xs">+{study.techHighlights.length - 4}</Pill>
                             )}
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-semibold font-playfair text-sm">Timeline & Engagement</h4>
-                          <p className="text-sm text-muted-foreground font-urbanist">{study.timeline}</p>
-                          <p className="text-sm text-muted-foreground font-urbanist">{study.engagement}</p>
+                          <h4 className="font-semibold font-playfair text-xs sm:text-sm">Timeline & Engagement</h4>
+                          <p className="text-xs sm:text-sm text-muted-foreground font-urbanist">{study.timeline}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground font-urbanist">{study.engagement}</p>
                         </div>
                       </div>
                     </CardContent>
-                    <CardFooter className="pt-4 mt-auto">
+                    <CardFooter className="pt-3 sm:pt-4 mt-auto px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 md:pb-6">
                     </CardFooter>
                   </Card>
                 ))}
