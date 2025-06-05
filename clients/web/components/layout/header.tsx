@@ -5,14 +5,14 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 
 const sectionLabels = [
-    { label: "about", shortLabel: "01", href: "#section-0" },
-    { label: "approach", shortLabel: "02", href: "#section-1" },
-    { label: "methodology", shortLabel: "03", href: "#section-2" },
-    { label: "edge", shortLabel: "04", href: "#section-3" },
-    { label: "services", shortLabel: "05", href: "#section-4" },
-    { label: "focus", shortLabel: "06", href: "#section-5" },
-    { label: "work", shortLabel: "07", href: "#section-6" },
-    { label: "connect", shortLabel: "08", href: "#section-7" }
+    { label: "about", shortLabel: "01", href: "#about" },
+    { label: "approach", shortLabel: "02", href: "#approach" },
+    { label: "methodology", shortLabel: "03", href: "#methodology" },
+    { label: "edge", shortLabel: "04", href: "#edge" },
+    { label: "services", shortLabel: "05", href: "#services" },
+    { label: "focus", shortLabel: "06", href: "#focus" },
+    { label: "work", shortLabel: "07", href: "#work" },
+    { label: "connect", shortLabel: "08", href: "#connect" }
 ]
 
 export function Header() {

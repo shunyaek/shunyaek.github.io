@@ -8,9 +8,9 @@ export function ApproachSection() {
           {/* Left Column - Header */}
           <div>
             <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-sm mb-6">
-              <span className="font-medium font-urbanist">section 1</span>
+              <span className="font-medium font-urbanist">approach</span>
               <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
-              <span className="text-muted-foreground font-urbanist">our approach</span>
+              <span className="text-muted-foreground italic font-urbanist">first principles, lasting outcomes</span>
             </div>
 
             <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6">

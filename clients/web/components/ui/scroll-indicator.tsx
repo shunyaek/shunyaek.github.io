@@ -7,14 +7,14 @@ interface ScrollIndicatorProps {
 }
 
 const sectionLabels = [
-  "about us",
-  "our approach",
-  "our methodology",
-  "our edge",
-  "our services",
-  "our focus",
-  "our work",
-  "connect with us"
+  "about",
+  "approach",
+  "methodology",
+  "edge",
+  "services",
+  "focus",
+  "work",
+  "connect"
 ]
 
 export function ScrollIndicator({ currentSection, totalSections, onSectionClick }: ScrollIndicatorProps) {

@@ -12,9 +12,9 @@ export function FocusSection() {
       <div className="container relative z-10 px-4 md:px-6 max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-sm mb-6">
-            <span className="font-medium font-urbanist">section 5</span>
+            <span className="font-medium font-urbanist">focus</span>
             <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
-            <span className="text-muted-foreground font-urbanist">our focus</span>
+            <span className="text-muted-foreground italic font-urbanist">depth over domain, intent over industry</span>
           </div>
 
           <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-6">

@@ -1091,11 +1091,11 @@ export function CaseStudiesSection() {
     <section id="case-studies" className="">
       {/* Wider container for peek effect */}
       <div className="w-full overflow-hidden">
-        <div className="relative max-w-full px-4 md:px-6">
+        <div className="relative max-w-full px-0 md:px-0">
           <div className="relative">
             {/* Horizontal scrolling carousel with mouse/touchpad scroll */}
-            <div className="overflow-x-auto overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing mx-4 md:mx-6">
-              <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
+            <div className="px-16 pb-32 pt-12 overflow-x-auto overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing mx-0 md:mx-0">
+              <div className="flex gap-6 p-0" style={{ width: 'max-content' }}>
                 {caseStudies.map((study) => (
                   <Card
                     key={study.id}

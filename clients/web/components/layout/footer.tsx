@@ -7,36 +7,44 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const navigationLinks = [
-    { label: "about", href: "#section-0" },
-    { label: "approach", href: "#section-1" },
-    { label: "methodology", href: "#section-2" },
-    { label: "edge", href: "#section-3" },
-    { label: "services", href: "#section-4" },
-    { label: "focus", href: "#section-5" },
-    { label: "work", href: "#section-6" },
-    { label: "connect", href: "#section-7" }
+    { label: "about", href: "#about" },
+    { label: "approach", href: "#approach" },
+    { label: "methodology", href: "#methodology" },
+    { label: "edge", href: "#edge" },
+    { label: "services", href: "#services" },
+    { label: "focus", href: "#focus" },
+    { label: "work", href: "#work" },
+    { label: "connect", href: "#connect" }
   ]
 
   return (
     <footer className="relative mt-auto">
       <div className="bg-background/60 backdrop-blur-md border-t border-white/20 shadow-xl">
-        <div className="container mx-auto px-6 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Logo and tagline */}
-            <div className="flex flex-col items-center md:items-start gap-3">
+            <div className="flex flex-row items-center md:items-start justify-center gap-3">
               <Link href="/" className="flex items-center space-x-3">
                 <div className="h-8 w-8 overflow-hidden">
                   <Image src="/logo.svg" alt="shunyaek Logo" width={32} height={32} className="h-full w-full" priority />
                 </div>
                 <span className="font-bold text-xl font-playfair">shunyaek.se</span>
               </Link>
-              <p className="text-sm text-muted-foreground text-center md:text-left">
+              <p className="text-xs italic text-muted-foreground text-center md:text-left">
                 bits to magic
               </p>
+              {/* <div className="flex items-center gap-4">
+                <Link href="/privacy" className="hover:text-foreground transition-colors">
+                  privacy policy
+                </Link>
+                <Link href="/terms" className="hover:text-foreground transition-colors">
+                  terms of service
+                </Link>
+              </div> */}
             </div>
 
             {/* Navigation Links */}
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            {/* <div className="flex flex-1 flex-grow flex-wrap items-center justify-center gap-3">
               {navigationLinks.map((link, index) => (
                 <Link
                   key={index}
@@ -46,30 +54,12 @@ export function Footer() {
                   {link.label}
                 </Link>
               ))}
-            </div>
+            </div> */}
 
             {/* Copyright */}
             <div className="text-sm text-muted-foreground text-center md:text-right">
               <p>© {currentYear} shunyaek.se</p>
-              <p className="text-xs mt-1">All rights reserved</p>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="h-px bg-border/30 my-6"></div>
-
-          {/* Bottom row */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-            <div className="flex items-center gap-4">
-              <Link href="/privacy" className="hover:text-foreground transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-foreground transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-            <div className="text-center md:text-right">
-              <p>Made with ❤️ for innovative businesses</p>
+              {/* <p className="text-xs mt-1">all rights reserved</p> */}
             </div>
           </div>
         </div>

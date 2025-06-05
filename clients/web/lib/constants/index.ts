@@ -33,7 +33,7 @@ export const EXTERNAL_LINKS = {
 export const COMPANY_INFO = {
   NAME: 'shunyaek.se',
   TAGLINE: 'bits to magic',
-  EMAIL: 'hello@shunyaek.se',
+  EMAIL: '01@shunyaek.se',
   PHONE: '+1 (555) 123-4567',
   ADDRESS: {
     STREET: '123 Innovation Drive',

@@ -58,14 +58,14 @@ export function VerticalScroller() {
 
       {/* Vertical Scroll Container */}
       <div className="relative z-10 snap-y snap-mandatory">
-        <section id="section-0" className="w-full"><AboutUsSection /></section>
-        <section id="section-1" className="w-full"><ApproachSection /></section>
-        <section id="section-2" className="w-full"><MethodologySection /></section>
-        <section id="section-3" className="w-full"><EdgeSection /></section>
-        <section id="section-4" className="w-full"><ServicesSection /></section>
-        <section id="section-5" className="w-full"><FocusSection /></section>
-        <section id="section-6" className="w-full"><WorkSection /></section>
-        <section id="section-7" className="w-full"><ConnectSection /></section>
+        <section id="about" className="w-full"><AboutUsSection /></section>
+        <section id="approach" className="w-full"><ApproachSection /></section>
+        <section id="methodology" className="w-full"><MethodologySection /></section>
+        <section id="edge" className="w-full"><EdgeSection /></section>
+        <section id="services" className="w-full"><ServicesSection /></section>
+        <section id="focus" className="w-full"><FocusSection /></section>
+        <section id="work" className="w-full"><WorkSection /></section>
+        <section id="connect" className="w-full"><ConnectSection /></section>
       </div>
     </div>
   )
