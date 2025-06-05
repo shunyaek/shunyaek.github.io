@@ -19,7 +19,7 @@ const sectionLabels = [
 
 export function ScrollIndicator({ currentSection, totalSections, onSectionClick }: ScrollIndicatorProps) {
   return (
-    <div className="fixed right-2 sm:right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 sm:gap-3">
+    <div className="fixed right-2 sm:right-4 md:right-6 top-1/2 transform -translate-y-1/2 z-50 hidden sm:flex flex-col gap-2 sm:gap-3">
       {Array.from({ length: totalSections }, (_, index) => (
         <button
           key={index}
