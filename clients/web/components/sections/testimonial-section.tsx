@@ -2,6 +2,7 @@ import Image from "next/image"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Quote } from "lucide-react"
+import { CustomButton } from "@/components/ui/custom-button"
 
 export function TestimonialSection() {
   const testimonials = [
@@ -69,6 +70,11 @@ export function TestimonialSection() {
               </CardFooter>
             </Card>
           ))}
+        </div>
+
+        {/* Connect Now CTA */}
+        <div className="flex justify-center mt-8 sm:mt-12">
+          <CustomButton href="#connect" />
         </div>
       </div>
     </section>

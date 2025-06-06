@@ -1,5 +1,7 @@
 "use client"
 
+import { CustomButton } from "@/components/ui/custom-button"
+
 export function EdgeSection() {
   return (
     <section className="w-full min-h-screen h-auto md:h-screen flex items-center justify-center snap-start py-8 md:py-0">
@@ -88,6 +90,11 @@ export function EdgeSection() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Connect Now CTA */}
+        <div className="flex justify-center mt-8 sm:mt-12">
+          <CustomButton href="#connect" />
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 "use client"
 
+import { CustomButton } from "@/components/ui/custom-button"
+
 export function ServicesSection() {
   const services = [
     {
@@ -73,6 +75,11 @@ export function ServicesSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Connect Now CTA */}
+        <div className="flex justify-center mt-8 sm:mt-12">
+          <CustomButton href="#connect" />
         </div>
       </div>
     </section>

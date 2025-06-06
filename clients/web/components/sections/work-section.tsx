@@ -1,6 +1,7 @@
 "use client"
 
 import { CaseStudiesSection } from "@/components/sections/case-studies-section"
+import { CustomButton } from "@/components/ui/custom-button"
 
 export function WorkSection() {
   return (
@@ -26,6 +27,11 @@ export function WorkSection() {
 
         {/* Use the existing comprehensive case studies section */}
         <CaseStudiesSection />
+
+        {/* Connect Now CTA */}
+        <div className="flex justify-center mt-0 sm:mt-0 px-4 sm:px-6">
+          <CustomButton href="#connect" />
+        </div>
       </div>
     </section>
   )
