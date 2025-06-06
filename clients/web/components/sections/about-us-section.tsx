@@ -26,6 +26,7 @@ function TypewriterEffect() {
   useEffect(() => {
     const currentWord = words[currentIndex]
     const speed = isDeleting ? 100 : 150
+    let nestedTimer: NodeJS.Timeout | null = null
 
     const timer = setTimeout(() => {
       if (isDeleting) {
@@ -37,14 +38,19 @@ function TypewriterEffect() {
         }
       } else {
         if (currentText === currentWord) {
-          setTimeout(() => setIsDeleting(true), 2000)
+          nestedTimer = setTimeout(() => setIsDeleting(true), 2000)
         } else {
           setCurrentText(currentWord.slice(0, currentText.length + 1))
         }
       }
     }, speed)
 
-    return () => clearTimeout(timer)
+    return () => {
+      clearTimeout(timer)
+      if (nestedTimer) {
+        clearTimeout(nestedTimer)
+      }
+    }
   }, [currentText, currentIndex, isDeleting])
 
   return (
