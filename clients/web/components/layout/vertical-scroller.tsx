@@ -11,6 +11,7 @@ import { WorkSection } from "@/components/sections/work-section"
 import { PricingSection } from "@/components/sections/pricing-section"
 import { ConnectSection } from "@/components/sections/connect-section"
 import { ScrollIndicator } from "@/components/ui/scroll-indicator"
+import { AnimatedSection } from "@/components/shared/animated-section"
 import { useThemeDetection } from "@/hooks/use-theme-detection"
 import { useCurrentSection } from "@/hooks/use-current-section"
 import styles from "@/styles/components/hero-section.module.css"
@@ -67,15 +68,15 @@ export function VerticalScroller() {
 
       {/* Vertical Scroll Container */}
       <div className="relative z-10 snap-y snap-mandatory">
-        <section id="about" className="w-full"><AboutUsSection /></section>
-        <section id="approach" className="w-full"><ApproachSection /></section>
-        <section id="methodology" className="w-full"><MethodologySection /></section>
-        <section id="edge" className="w-full"><EdgeSection /></section>
-        <section id="services" className="w-full"><ServicesSection /></section>
-        <section id="focus" className="w-full"><FocusSection /></section>
-        <section id="work" className="w-full"><WorkSection /></section>
-        <section id="pricing" className="w-full"><PricingSection /></section>
-        <section id="connect" className="w-full"><ConnectSection /></section>
+        <AnimatedSection id="about" className="w-full"><AboutUsSection /></AnimatedSection>
+        <AnimatedSection id="approach" className="w-full"><ApproachSection /></AnimatedSection>
+        <AnimatedSection id="methodology" className="w-full"><MethodologySection /></AnimatedSection>
+        <AnimatedSection id="edge" className="w-full"><EdgeSection /></AnimatedSection>
+        <AnimatedSection id="services" className="w-full"><ServicesSection /></AnimatedSection>
+        <AnimatedSection id="focus" className="w-full"><FocusSection /></AnimatedSection>
+        <AnimatedSection id="work" className="w-full"><WorkSection /></AnimatedSection>
+        <AnimatedSection id="pricing" className="w-full"><PricingSection /></AnimatedSection>
+        <AnimatedSection id="connect" className="w-full"><ConnectSection /></AnimatedSection>
       </div>
     </div>
   )

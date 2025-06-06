@@ -14,3 +14,4 @@ export { PricingSection } from './sections/pricing-section'
 export { ThemeProvider } from './shared/theme-provider'
 export { ThemeToggle } from './shared/theme-toggle'
 export { ContactButton } from './shared/contact-button' 
+export { AnimatedSection } from "./shared/animated-section"
