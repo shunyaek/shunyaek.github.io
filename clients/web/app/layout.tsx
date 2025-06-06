@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Playfair_Display, Urbanist } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/shared/theme-provider"
@@ -25,11 +25,12 @@ export const metadata: Metadata = {
   title: "shunyaek.se | bits to magic",
   description: "Empowering businesses with innovative digital solutions to thrive in today's competitive landscape.",
   generator: "shunyaek.se",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
