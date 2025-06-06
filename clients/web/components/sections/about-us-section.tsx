@@ -1,6 +1,65 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { CustomButton } from "../ui/custom-button"
+
+// Typewriter effect component
+function TypewriterEffect() {
+  const words = [
+    "a product-minded partner",
+    "your embedded team",
+    "an engineering ally",
+    "thoughtful technologists",
+    "builders, not vendors",
+    "consultants who code",
+    "engineers who listen",
+    "your fractional cto",
+    "problem-solvers in disguise",
+    "strategists who ship",
+    "craftspeople with conviction",
+    "calm in the chaos",
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentText, setCurrentText] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    const currentWord = words[currentIndex]
+    const speed = isDeleting ? 100 : 150
+    let nestedTimer: NodeJS.Timeout | null = null
+
+    const timer = setTimeout(() => {
+      if (isDeleting) {
+        if (currentText === "") {
+          setIsDeleting(false)
+          setCurrentIndex((prev) => (prev + 1) % words.length)
+        } else {
+          setCurrentText(currentText.slice(0, -1))
+        }
+      } else {
+        if (currentText === currentWord) {
+          nestedTimer = setTimeout(() => setIsDeleting(true), 2000)
+        } else {
+          setCurrentText(currentWord.slice(0, currentText.length + 1))
+        }
+      }
+    }, speed)
+
+    return () => {
+      clearTimeout(timer)
+      if (nestedTimer) {
+        clearTimeout(nestedTimer)
+      }
+    }
+  }, [currentText, currentIndex, isDeleting])
+
+  return (
+    <span className="brand-gradient-text text-4xl sm:text-6xl relative font-playfair font-extrabold">
+      {currentText}
+      <span className="absolute right-[-4px] top-0 animate-blink">|</span>
+    </span>
+  )
+}
 
 export function AboutUsSection() {
   return (
@@ -13,8 +72,11 @@ export function AboutUsSection() {
           <span className="text-muted-foreground italic font-urbanist sm:hidden">crafting clarity in a world of noise</span>
         </div>
 
-        <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tighter mb-6 sm:mb-8">
-          <span className="brand-gradient-text">shunyaek.se</span>
+        <h1 className="font-playfair text-5xl font-extrabold tracking-tighter sm:text-6xl md:text-7xl flex flex-col mb-6 sm:mb-8">
+          {/* <span className="text-4xl sm:text-6xl md:text-7xl font-extrabold">Empowering Your Digital</span> */}
+          <span className="h-[1.5em] block">
+            <TypewriterEffect />
+          </span>
         </h1>
 
         <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6">
