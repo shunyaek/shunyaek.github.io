@@ -42,7 +42,7 @@ export function PricingSection() {
   ]
 
   return (
-    <section className="w-full min-h-screen flex items-center justify-center snap-start py-12">
+    <section id="pricing" className="w-full min-h-screen flex items-center justify-center snap-start py-12">
       <div className="container relative z-10 px-4 md:px-6 max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6">
