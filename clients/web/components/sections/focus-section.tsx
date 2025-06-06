@@ -1,5 +1,7 @@
 "use client"
 
+import { CustomButton } from "@/components/ui/custom-button"
+
 export function FocusSection() {
   const industries = [
     "fast-growing startups", "enterprise teams", "non-profits", "fintech & payments",
@@ -95,6 +97,11 @@ export function FocusSection() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Connect Now CTA */}
+        <div className="flex justify-center mt-8 sm:mt-12">
+          <CustomButton href="mailto:01@shunyaek.se" />
         </div>
       </div>
     </section>

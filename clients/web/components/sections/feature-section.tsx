@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Code, Cloud, Smartphone, LineChart, Cpu, Globe, PenTool, Shield, Briefcase } from "lucide-react"
 import Image from "next/image"
+import { CustomButton } from "@/components/ui/custom-button"
 
 export function FeatureSection() {
   // Add custom styles for plastiky tabs
@@ -220,6 +221,11 @@ export function FeatureSection() {
             </div>
           </TabsContent>
         </Tabs>
+
+        {/* Connect Now CTA */}
+        <div className="flex justify-center mt-8 sm:mt-12">
+          <CustomButton href="mailto:01@shunyaek.se" />
+        </div>
       </div>
     </section>
   )

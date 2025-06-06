@@ -96,7 +96,7 @@ export function PricingSection() {
               </CardContent>
               <CardFooter className="mt-auto pt-4">
                 <CustomButton href={plan.price === "Custom" ? "mailto:01@shunyaek.se" : "/signup"} className="w-full">
-                  {plan.price === "Custom" ? "Connect with Sales" : "Get Started"}
+                  {plan.price === "Custom" ? "Connect Now" : "Get Started"}
                 </CustomButton>
               </CardFooter>
             </Card>
@@ -111,7 +111,7 @@ export function PricingSection() {
             your business.
           </p>
           <CustomButton href="mailto:01@shunyaek.se" className="inline-flex">
-            Connect with Sales
+            Connect Now
           </CustomButton>
         </div>
       </div>

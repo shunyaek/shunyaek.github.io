@@ -6,16 +6,18 @@ export function ConnectSection() {
   return (
     <section className="w-full min-h-screen h-auto md:h-screen flex items-center justify-center snap-start py-8 md:py-0">
       <div className="container relative z-10 px-4 md:px-6 max-w-5xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6">
+            <span className="font-medium font-urbanist">connect</span>
+            <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
+            <span className="text-muted-foreground italic font-urbanist hidden sm:inline">no pitch. just conversation</span>
+            <span className="text-muted-foreground italic font-urbanist sm:hidden">no pitch. just conversation</span>
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Column - Header */}
           <div>
-            <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6">
-              <span className="font-medium font-urbanist">connect</span>
-              <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
-              <span className="text-muted-foreground italic font-urbanist hidden sm:inline">no pitch. just conversation</span>
-              <span className="text-muted-foreground italic font-urbanist sm:hidden">no pitch. just conversation</span>
-            </div>
-
             <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter mb-4 sm:mb-6">
               <span className="brand-gradient-text">let's build something meaningful, together</span>
             </h2>
