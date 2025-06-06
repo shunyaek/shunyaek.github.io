@@ -77,7 +77,7 @@ export function ApproachSection() {
 
         {/* Connect Now CTA */}
         <div className="flex justify-center mt-8 sm:mt-12">
-          <CustomButton href="mailto:01@shunyaek.se" />
+          <CustomButton href="#connect" />
         </div>
       </div>
     </section>

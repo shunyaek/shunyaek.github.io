@@ -92,7 +92,7 @@ export function AboutUsSection() {
         </div>
 
         <div className="mt-8 sm:mt-12 flex justify-center">
-          <CustomButton href="mailto:01@shunyaek.se" />
+          <CustomButton href="#connect" />
         </div>
       </div>
     </section>

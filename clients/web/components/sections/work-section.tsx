@@ -29,8 +29,8 @@ export function WorkSection() {
         <CaseStudiesSection />
 
         {/* Connect Now CTA */}
-        <div className="flex justify-center mt-8 sm:mt-12 px-4 sm:px-6">
-          <CustomButton href="mailto:01@shunyaek.se" />
+        <div className="flex justify-center mt-0 sm:mt-0 px-4 sm:px-6">
+          <CustomButton href="#connect" />
         </div>
       </div>
     </section>
