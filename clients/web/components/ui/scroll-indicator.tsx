@@ -14,6 +14,7 @@ const sectionLabels = [
   "services",
   "focus",
   "work",
+  "pricing",
   "connect"
 ]
 

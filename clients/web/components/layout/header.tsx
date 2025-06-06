@@ -2,8 +2,9 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import { useCurrentSection } from "@/hooks/use-current-section"
 
 const sectionLabels = [
     { label: "about", shortLabel: "01", href: "#about" },
@@ -13,31 +14,13 @@ const sectionLabels = [
     { label: "services", shortLabel: "05", href: "#services" },
     { label: "focus", shortLabel: "06", href: "#focus" },
     { label: "work", shortLabel: "07", href: "#work" },
-    { label: "connect", shortLabel: "08", href: "#connect" }
+    { label: "pricing", shortLabel: "08", href: "#pricing" },
+    { label: "connect", shortLabel: "09", href: "#connect" }
 ]
 
 export function Header() {
-    const [currentSection, setCurrentSection] = useState(0)
+    const currentSection = useCurrentSection(sectionLabels.length)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY
-            const windowHeight = window.innerHeight
-
-            // Calculate which section we're closest to
-            const currentIndex = Math.floor((scrollTop + windowHeight / 2) / windowHeight)
-            const boundedIndex = Math.min(Math.max(currentIndex, 0), sectionLabels.length - 1)
-
-            setCurrentSection(boundedIndex)
-        }
-
-        // Initial call to set the current section
-        handleScroll()
-
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
 
     const handleMobileMenuClose = () => {
         setIsMobileMenuOpen(false)
@@ -115,9 +98,6 @@ export function Header() {
 
                         {/* Current section indicator + menu button */}
                         <div className="flex items-center gap-2">
-                            {/* <div className="text-xs text-muted-foreground">
-                                {sectionLabels[currentSection]?.shortLabel}
-                            </div> */}
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                                 className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"

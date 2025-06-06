@@ -8,7 +8,7 @@ export { HeroSection } from './sections/hero-section'
 export { FeatureSection } from './sections/feature-section'
 export { TestimonialSection } from './sections/testimonial-section'
 export { CaseStudiesSection } from './sections/case-studies-section'
-export { CtaSection } from './sections/cta-section'
+export { PricingSection } from './sections/pricing-section'
 
 // Shared Components
 export { ThemeProvider } from './shared/theme-provider'

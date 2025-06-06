@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
 import { AboutUsSection } from "@/components/sections/about-us-section"
 import { ApproachSection } from "@/components/sections/approach-section"
 import { MethodologySection } from "@/components/sections/methodology-section"
@@ -8,36 +8,45 @@ import { EdgeSection } from "@/components/sections/edge-section"
 import { ServicesSection } from "@/components/sections/services-section"
 import { FocusSection } from "@/components/sections/focus-section"
 import { WorkSection } from "@/components/sections/work-section"
+import { PricingSection } from "@/components/sections/pricing-section"
 import { ConnectSection } from "@/components/sections/connect-section"
 import { ScrollIndicator } from "@/components/ui/scroll-indicator"
 import { useThemeDetection } from "@/hooks/use-theme-detection"
+import { useCurrentSection } from "@/hooks/use-current-section"
 import styles from "@/styles/components/hero-section.module.css"
+
+const sectionIds = [
+  "about",
+  "approach",
+  "methodology",
+  "edge",
+  "services",
+  "focus",
+  "work",
+  "pricing",
+  "connect"
+]
 
 export function VerticalScroller() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const [currentSection, setCurrentSection] = useState(0)
-  const totalSections = 8
+  const totalSections = 9
+  const currentSection = useCurrentSection(totalSections)
   const { isDarkTheme } = useThemeDetection()
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const container = window
-      const scrollTop = container.scrollY
-      const windowHeight = container.innerHeight
-      const currentIndex = Math.round(scrollTop / windowHeight)
-      setCurrentSection(Math.min(currentIndex, totalSections - 1))
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   const scrollToSection = (index: number) => {
-    const targetPosition = index * window.innerHeight
-    window.scrollTo({
-      top: targetPosition,
-      behavior: 'smooth'
-    })
+    const sectionId = sectionIds[index]
+    if (sectionId) {
+      const section = document.getElementById(sectionId)
+      if (section) {
+        const rect = section.getBoundingClientRect()
+        const targetPosition = rect.top + window.scrollY
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        })
+      }
+    }
   }
 
   return (
@@ -65,6 +74,7 @@ export function VerticalScroller() {
         <section id="services" className="w-full"><ServicesSection /></section>
         <section id="focus" className="w-full"><FocusSection /></section>
         <section id="work" className="w-full"><WorkSection /></section>
+        <section id="pricing" className="w-full"><PricingSection /></section>
         <section id="connect" className="w-full"><ConnectSection /></section>
       </div>
     </div>

@@ -1,12 +1,10 @@
 "use client"
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import { CustomButton } from "@/components/ui/custom-button"
-import { useThemeDetection } from "@/hooks/use-theme-detection"
 
-export function CtaSection() {
-  const { isDarkTheme, mounted } = useThemeDetection()
-
+export function PricingSection() {
   const plans = [
     {
       name: "Starter",
@@ -44,35 +42,32 @@ export function CtaSection() {
   ]
 
   return (
-    <section id="pricing" className="py-20 md:py-32 relative">
-      <div className="absolute inset-0 z-0">
-        {mounted && (
-          <div
-            className="absolute inset-0 bg-no-repeat bg-cover bg-center"
-            style={{ backgroundImage: `url("/images/background2${isDarkTheme ? "-dark" : ""}.png")` }}
-          />
-        )}
-        <div className="absolute inset-0 backdrop-blur-sm bg-background/30" />
-      </div>
-      <div className="container px-4 md:px-6 relative z-10">
-        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center rounded-full border bg-background px-3 py-1 text-sm mb-4">
-            <span className="font-medium font-urbanist">Pricing</span>
+    <section className="w-full min-h-screen flex items-center justify-center snap-start py-12">
+      <div className="container relative z-10 px-4 md:px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6">
+            <span className="font-medium font-urbanist">pricing</span>
             <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
-            <span className="text-muted-foreground font-urbanist">Simple & Transparent</span>
+            <span className="text-muted-foreground italic font-urbanist hidden sm:inline">simple & transparent</span>
+            <span className="text-muted-foreground italic font-urbanist sm:hidden">simple & transparent</span>
           </div>
-          <h2 className="section-title">Choose the Right Plan for Your Business</h2>
-          <p className="section-description mx-auto">
-            Flexible pricing options from shunyaek.se designed to scale with your business needs. No hidden fees or
+
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter mb-4 sm:mb-6">
+            <span className="brand-gradient-text">choose the right plan</span> for your business
+          </h2>
+
+          <p className="lead-text text-base sm:text-lg max-w-4xl mx-auto px-2 sm:px-0">
+            flexible pricing options from shunyaek.se designed to scale with your business needs. no hidden fees or
             long-term commitments.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        {/* Pricing Cards Grid */}
+        <div className="grid gap-6 md:grid-cols-3 mb-12 md:mb-16">
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className="border bg-background relative h-full flex flex-col transition-all duration-300 hover:brand-shadow hover:bg-gradient-to-br hover:from-[rgba(59,130,246,0.05)] hover:to-[rgba(16,185,129,0.05)]"
+              className="border bg-background/40 backdrop-blur-sm relative h-full flex flex-col transition-all duration-300 hover:brand-shadow hover:bg-gradient-to-br hover:from-[rgba(59,130,246,0.05)] hover:to-[rgba(16,185,129,0.05)]"
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-0 right-0 flex justify-center">
@@ -100,7 +95,7 @@ export function CtaSection() {
                 </ul>
               </CardContent>
               <CardFooter className="mt-auto pt-4">
-                <CustomButton href={plan.price === "Custom" ? "/connect" : "/signup"} className="w-full">
+                <CustomButton href={plan.price === "Custom" ? "mailto:01@shunyaek.se" : "/signup"} className="w-full">
                   {plan.price === "Custom" ? "Connect with Sales" : "Get Started"}
                 </CustomButton>
               </CardFooter>
@@ -108,18 +103,18 @@ export function CtaSection() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col items-center text-center">
-          <h3 className="text-2xl font-bold font-playfair">Need a Custom Solution?</h3>
-          <p className="mt-2 max-w-[600px] text-muted-foreground font-urbanist">
-            Connect with our sales team at shunyaek.se to discuss your specific requirements and get a tailored solution for
+        {/* Custom Solution CTA */}
+        <div className="flex flex-col items-center text-center">
+          <h3 className="font-playfair text-xl sm:text-2xl font-bold mb-2">need a custom solution?</h3>
+          <p className="text-sm sm:text-base max-w-[600px] text-muted-foreground font-urbanist mb-6">
+            connect with our team at shunyaek.se to discuss your specific requirements and get a tailored solution for
             your business.
           </p>
-          <CustomButton href="/connect" className="mt-6 inline-flex">
-            Connect Now
+          <CustomButton href="mailto:01@shunyaek.se" className="inline-flex">
+            Connect with Sales
           </CustomButton>
         </div>
       </div>
     </section>
   )
-}
-
+} 
