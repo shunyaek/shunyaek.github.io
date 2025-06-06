@@ -79,7 +79,7 @@ const caseStudySustainabilityPlatform: CaseStudy = {
   title: "Enterprise Sustainability Action Platform",
   domain: "Decarbonization & Sustainability Intelligence",
   engagement: "Full-stack Engineering · AI Integration · Secure Auth",
-  timeline: "Apr 2023 – Dec 2023 (9 mos)",
+  timeline: "Jan 2022 – Jun 2022 (6 mos)",
   techHighlights: [
     "Python",
     "FastAPI",
@@ -394,7 +394,7 @@ const caseStudyAirlineRevenueAI: CaseStudy = {
   title: "AI-Driven Revenue Management for a Low-Cost Carrier",
   domain: "Airline Revenue Management & Pricing",
   engagement: "Full-stack ML Engineering · Data Warehousing · Analyst UX",
-  timeline: "Feb 2022 – Dec 2022 (11 mos)",
+  timeline: "Jul 2022 – Jan 2023 (6 mos)",
   techHighlights: [
     "Python",
     "Django REST",
@@ -495,7 +495,7 @@ const caseStudyFmcgPromoAI: CaseStudy = {
   title: "AI-Powered Marketing & Promotion for a Global Beverages Brand",
   domain: "FMCG Marketing & Trade Promotion",
   engagement: "ML Engineering · Micro-API Pipelines · Calendar-Driven UX",
-  timeline: "May 2023 – Feb 2024 (10 mos)",
+  timeline: "Oct 2021 – Dec 2021 (3 mos)",
   techHighlights: [
     "Python",
     "FastAPI",
@@ -596,7 +596,7 @@ const caseStudyMarketingCopilot: CaseStudy = {
   title: "AI-Copilot for Marketing Teams",
   domain: "Marketing Analytics & Workflow Automation",
   engagement: "Full-stack Product Engineering · AI Micro-services · Integrations",
-  timeline: "Feb 2023 – Sep 2023 (8 mos)",
+  timeline: "May 2023 – Dec 2023 (8 mos)",
   techHighlights: [
     "Python",
     "FastAPI",
@@ -884,7 +884,7 @@ const caseStudySocialFundraisingPlatform: CaseStudy = {
   title: "Cloud-Native Social Fundraising Network",
   domain: "Digital Fundraising & Volunteer Engagement",
   engagement: "Front-End MVP · Cloud-Native Automation · Micro-Service Factory",
-  timeline: "Feb 2023 – May 2025 (22 mos)",
+  timeline: "Nov 2023 – May 2025 (18 mos)",
   techHighlights: [
     "TypeScript",
     "React",
@@ -971,7 +971,7 @@ const caseStudySocSaaS: CaseStudy = {
   title: "Cloud-Native SOC-as-a-Service Platform",
   domain: "Cyber-Security Monitoring & Incident Response",
   engagement: "Full-Stack SaaS Build · Web & Mobile · Cloud Native",
-  timeline: "Jan 2025 – Jun 2025 (6 mos)",
+  timeline: "Mar 2023 – Feb 2024 (12 mos)",
   techHighlights: [
     "Next.js",
     "TypeScript",
