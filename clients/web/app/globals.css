@@ -379,6 +379,66 @@
       padding-left: 1rem;
       padding-right: 1rem;
     }
+    
+    /* ROOT CAUSE FIX: Kill ALL Framer Motion animations on mobile that cause layout shifts */
+    body {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  /* TARGETED HEADER FIX - Preserve animations but prevent header interference */
+  @media (max-width: 1024px) {
+    /* Ensure header stays above all content and animations */
+    header[class*="fixed"] {
+      z-index: 9999 !important;
+      position: fixed !important;
+      isolation: isolate !important;
+      contain: layout style !important;
+    }
+    
+    /* Prevent layout shifts in first section that affect header */
+    section:first-of-type {
+      min-height: 100vh !important;
+      contain: layout !important;
+    }
+    
+    /* Only disable transforms during initial render for elements that cause shifts */
+    body:not(.header-stable) section:first-of-type * {
+      transform: none !important;
+      will-change: auto !important;
+    }
+    
+    /* Re-enable after header is stable */
+    body.header-stable section * {
+      will-change: transform, opacity !important;
+    }
+  }
+  
+
+  
+  /* iOS Safari specific fixes */
+  @supports (-webkit-touch-callout: none) {
+    header[class*="fixed"] {
+      position: fixed !important;
+      /* Use viewport units that don't change with Safari's dynamic viewport */
+      top: env(safe-area-inset-top, 0.75rem) !important;
+      /* Force visibility on iOS */
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  }
+  
+  /* ENHANCED HEADER STABILITY */
+  header[class*="fixed"] {
+    position: fixed !important;
+    transform: translateX(-50%) !important;
+    -webkit-transform: translateX(-50%) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 9999 !important;
+    contain: layout style paint !important;
+    isolation: isolate !important;
+    pointer-events: auto !important;
   }
 
   /* Better text rendering */

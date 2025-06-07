@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { useCurrentSection } from "@/hooks/use-current-section"
 
@@ -21,6 +21,22 @@ const sectionLabels = [
 export function Header() {
     const currentSection = useCurrentSection(sectionLabels.length)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+    // Mark header as stable after component mounts
+    useEffect(() => {
+        // Only manage on mobile/tablet
+        if (window.innerWidth <= 1024) {
+            // Mark header as stable after a brief delay
+            const timer = setTimeout(() => {
+                document.body.classList.add('header-stable')
+            }, 1000) // Shorter delay to preserve animations
+
+            return () => {
+                clearTimeout(timer)
+                document.body.classList.remove('header-stable')
+            }
+        }
+    }, [])
 
     const handleMobileMenuClose = () => {
         setIsMobileMenuOpen(false)
