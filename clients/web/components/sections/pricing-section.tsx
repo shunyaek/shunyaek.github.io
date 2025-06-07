@@ -110,7 +110,7 @@ export function PricingSection() {
                   <ul className="space-y-2">
                     {plan.highlights.map((highlight, i) => (
                       <li key={i} className="flex items-center gap-2">
-                        <Check className={`h-4 w-4 ${i % 2 === 0 ? "text-[#3B82F6]" : "text-[#10B981]"}`} />
+                        <Check className={`h-4 min-h-4 max-h-4 w-4 min-w-4 max-w-4 ${i % 2 === 0 ? "text-[#3B82F6]" : "text-[#10B981]"}`} />
                         <span className="font-urbanist">{highlight}</span>
                       </li>
                     ))}
