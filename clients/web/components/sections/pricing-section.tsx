@@ -1,46 +1,13 @@
 "use client"
 
 import { motion } from "motion/react"
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import { CustomButton } from "@/components/ui/custom-button"
+import { plans, formatPrice, type Plan } from "@/lib/plans"
 
 export function PricingSection() {
-  const plans = [
-    {
-      name: "Starter",
-      price: "$4999",
-      description: "Perfect for small businesses and startups",
-      features: ["Up to 5 users", "Basic analytics", "Standard support", "Core features", "1 project"],
-    },
-    {
-      name: "Professional",
-      price: "$9999",
-      description: "Ideal for growing businesses with advanced needs",
-      features: [
-        "Up to 20 users",
-        "Advanced analytics",
-        "Priority support",
-        "All core features",
-        "Unlimited projects",
-        "API access",
-      ],
-      popular: true,
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      description: "Tailored solutions for large organizations",
-      features: [
-        "Unlimited users",
-        "Custom analytics",
-        "24/7 dedicated support",
-        "All features",
-        "Custom integrations",
-        "Dedicated account manager",
-      ],
-    },
-  ]
 
   return (
     <section id="pricing" className="w-full min-h-screen flex items-center justify-center snap-start py-12">
@@ -89,7 +56,7 @@ export function PricingSection() {
 
         {/* Pricing Cards Grid */}
         <motion.div
-          className="grid gap-6 md:grid-cols-3 mb-12 md:mb-16"
+          className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-12 md:mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -97,7 +64,7 @@ export function PricingSection() {
         >
           {plans.map((plan, index) => (
             <motion.div
-              key={index}
+              key={plan.id}
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               whileHover={{
@@ -112,40 +79,52 @@ export function PricingSection() {
               }}
               viewport={{ once: true }}
             >
-              <Card
-              className="border bg-background/40 backdrop-blur-sm relative h-full flex flex-col transition-all duration-300 hover:brand-shadow hover:bg-gradient-to-br hover:from-[rgba(59,130,246,0.05)] hover:to-[rgba(16,185,129,0.05)]"
-            >
-              {plan.popular && (
-                <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                  <div className="rounded-full brand-gradient-bg px-3 py-1 text-xs font-medium text-white font-urbanist">
-                    Most Popular
+              <Card className="border bg-background/40 backdrop-blur-sm relative h-full flex flex-col transition-all duration-300 hover:brand-shadow hover:bg-gradient-to-br hover:from-[rgba(59,130,246,0.05)] hover:to-[rgba(16,185,129,0.05)]">
+                {plan.isPopular && (
+                  <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                    <div className="rounded-full brand-gradient-bg px-3 py-1 text-xs font-medium text-white font-urbanist">
+                      Most Popular
+                    </div>
                   </div>
-                </div>
-              )}
-              <CardHeader>
-                <CardTitle className="text-2xl font-playfair">{plan.name}</CardTitle>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold font-playfair">{plan.price}</span>
-                  {plan.price !== "Custom" && <span className="text-muted-foreground font-urbanist">/month</span>}
-                </div>
-                <CardDescription className="font-urbanist">{plan.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="space-y-2">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <Check className={`h-4 w-4 ${i % 2 === 0 ? "text-[#3B82F6]" : "text-[#10B981]"}`} />
-                      <span className="font-urbanist">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter className="mt-auto pt-4">
-                <CustomButton href={plan.price === "Custom" ? "#connect" : "/signup"} className="w-full">
-                  {plan.price === "Custom" ? "connect now" : "get started"}
-                </CustomButton>
-              </CardFooter>
-            </Card>
+                )}
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold">
+                    <span className="brand-gradient-text">
+                      {plan.displayName}
+                    </span>
+                  </CardTitle>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-bold font-playfair">{formatPrice(plan)}</span>
+                    {plan.price.amount !== "custom" && (
+                      <span className="text-muted-foreground font-urbanist">/{plan.price.cadence}</span>
+                    )}
+                  </div>
+                  <CardDescription className="font-urbanist italic mb-1">
+                    {plan.tagline}
+                  </CardDescription>
+                  <CardDescription className="font-urbanist">
+                    {plan.target}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <ul className="space-y-2">
+                    {plan.highlights.map((highlight, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <Check className={`h-4 w-4 ${i % 2 === 0 ? "text-[#3B82F6]" : "text-[#10B981]"}`} />
+                        <span className="font-urbanist">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter className="mt-auto pt-4">
+                  <CustomButton
+                    href={plan.price.amount === "custom" ? "#connect" : "/signup"}
+                    className="w-full"
+                  >
+                    {plan.price.amount === "custom" ? "connect now" : "get started"}
+                  </CustomButton>
+                </CardFooter>
+              </Card>
             </motion.div>
           ))}
         </motion.div>
