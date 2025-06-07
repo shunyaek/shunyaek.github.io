@@ -2,10 +2,11 @@
 
 import { motion } from "motion/react"
 import { CustomButton } from "@/components/ui/custom-button"
+import { ClientMarquee } from "@/components/ui/client-marquee"
 
 export function ApproachSection() {
   return (
-    <section className="w-full min-h-screen h-auto md:h-screen flex items-center justify-center snap-start py-8 md:py-0">
+    <section className="w-full min-h-screen h-auto flex items-center justify-center snap-start py-8 md:py-12">
       <div className="container relative z-10 px-4 md:px-6 max-w-5xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Header */}
@@ -126,8 +127,19 @@ export function ApproachSection() {
           </motion.div>
         </div>
 
+        {/* Client Marquee */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-6 sm:mt-12"
+        >
+          <ClientMarquee />
+        </motion.div>
+
         {/* Connect Now CTA */}
-        <div className="flex justify-center mt-8 sm:mt-12">
+        <div className="flex justify-center mt-6 sm:mt-8 mb-4">
           <CustomButton href="#connect" />
         </div>
       </div>
