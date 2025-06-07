@@ -57,7 +57,7 @@ function TypewriterEffect() {
   return (
     <span className="brand-gradient-text text-4xl sm:text-6xl relative font-playfair font-extrabold">
       {currentText}
-      <span className="absolute right-[-4px] top-0 animate-blink">|</span>
+      <span className="text-6xl sm:text-7xl">|</span>
     </span>
   )
 }
