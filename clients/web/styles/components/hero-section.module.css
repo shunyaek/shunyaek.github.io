@@ -18,6 +18,31 @@
   background-repeat: no-repeat;
 }
 
+/* Mobile enhancement overlay - keeps original images but adds glow */
+@media (max-width: 768px) {
+  .heroBackgroundLight::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.3) 0%, transparent 60%),
+      radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.3) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .heroBackgroundDark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.4) 0%, transparent 60%),
+      radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.4) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
 .embla {
   overflow: hidden;
   position: relative;
