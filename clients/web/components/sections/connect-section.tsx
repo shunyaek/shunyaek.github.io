@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { motion } from "motion/react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -101,23 +102,47 @@ export function ConnectSection() {
   return (
     <section className="w-full py-12 md:py-16 lg:py-20 snap-start">
       <div className="container relative z-10 px-4 md:px-6 max-w-5xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6">
+        <motion.div
+          className="text-center mb-8 sm:mb-12"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <span className="font-medium font-urbanist">connect</span>
             <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
             <span className="text-muted-foreground italic font-urbanist hidden sm:inline">no pitch. just conversation</span>
             <span className="text-muted-foreground italic font-urbanist sm:hidden">no pitch. just conversation</span>
-          </div>
+          </motion.div>
 
-          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter mb-4 sm:mb-6">
+          <motion.h2
+            className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter mb-4 sm:mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
             <span className="brand-gradient-text">let's build something meaningful, together</span>
-          </h2>
+          </motion.h2>
 
-          <p className="lead-text text-base sm:text-lg max-w-3xl mx-auto px-2 sm:px-0">
+          <motion.p
+            className="lead-text text-base sm:text-lg max-w-3xl mx-auto px-2 sm:px-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             we don't do hard sells. we don't do bloated decks. and we definitely don't do copy-paste proposals.
             what we do is listen — really listen.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           {/* Left Column - Info */}
@@ -229,8 +254,6 @@ export function ConnectSection() {
                     />
                   </div>
                 </div>
-
-
 
                 {/* Message */}
                 <div className="space-y-2">

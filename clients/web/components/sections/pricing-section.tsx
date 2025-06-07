@@ -1,5 +1,6 @@
 "use client"
 
+import { motion } from "motion/react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import { CustomButton } from "@/components/ui/custom-button"
@@ -44,29 +45,74 @@ export function PricingSection() {
   return (
     <section id="pricing" className="w-full min-h-screen flex items-center justify-center snap-start py-12">
       <div className="container relative z-10 px-4 md:px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6">
+        <motion.div
+          className="text-center mb-8 sm:mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-4 sm:mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <span className="font-medium font-urbanist">pricing</span>
             <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
             <span className="text-muted-foreground italic font-urbanist hidden sm:inline">simple & transparent</span>
             <span className="text-muted-foreground italic font-urbanist sm:hidden">simple & transparent</span>
-          </div>
+          </motion.div>
 
-          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter mb-4 sm:mb-6">
+          <motion.h2
+            className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter mb-4 sm:mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
             <span className="brand-gradient-text">choose the right plan</span> for your business
-          </h2>
+          </motion.h2>
 
-          <p className="lead-text text-base sm:text-lg max-w-4xl mx-auto px-2 sm:px-0">
+          <motion.p
+            className="lead-text text-base sm:text-lg max-w-4xl mx-auto px-2 sm:px-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             flexible pricing options from shunyaek.se designed to scale with your business needs. no hidden fees or
             long-term commitments.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid gap-6 md:grid-cols-3 mb-12 md:mb-16">
+        <motion.div
+          className="grid gap-6 md:grid-cols-3 mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           {plans.map((plan, index) => (
-            <Card
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              whileHover={{
+                scale: 1.03,
+                y: -8,
+                transition: { duration: 0.2 }
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.5 + (index * 0.15),
+                ease: "easeOut"
+              }}
+              viewport={{ once: true }}
+            >
+              <Card
               className="border bg-background/40 backdrop-blur-sm relative h-full flex flex-col transition-all duration-300 hover:brand-shadow hover:bg-gradient-to-br hover:from-[rgba(59,130,246,0.05)] hover:to-[rgba(16,185,129,0.05)]"
             >
               {plan.popular && (
@@ -100,8 +146,9 @@ export function PricingSection() {
                 </CustomButton>
               </CardFooter>
             </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Custom Solution CTA */}
         <div className="flex flex-col items-center text-center">

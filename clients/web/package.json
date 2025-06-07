@@ -45,6 +45,7 @@
     "embla-carousel-react": "latest",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
+    "motion": "^12.16.0",
     "next": "15.1.0",
     "next-themes": "latest",
     "posthog-js": "^1.249.3",
