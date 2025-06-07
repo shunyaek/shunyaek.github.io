@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { motion } from "motion/react"
 import { CustomButton } from "../ui/custom-button"
 
 // Typewriter effect component
@@ -56,7 +57,7 @@ function TypewriterEffect() {
   return (
     <span className="brand-gradient-text text-4xl sm:text-6xl relative font-playfair font-extrabold">
       {currentText}
-      <span className="absolute right-[-4px] top-0 animate-blink">|</span>
+      <span className="text-6xl sm:text-7xl">|</span>
     </span>
   )
 }
@@ -65,35 +66,71 @@ export function AboutUsSection() {
   return (
     <section className="w-full min-h-screen h-auto md:h-screen flex items-center justify-center snap-start py-8 md:py-0">
       <div className="container relative z-10 px-4 md:px-6 max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-6 sm:mb-8">
+        <motion.div
+          className="inline-flex items-center rounded-full border bg-background/80 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm mb-6 sm:mb-8"
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <span className="font-medium font-urbanist">about</span>
           <div className="mx-2 h-1 w-1 rounded-full bg-foreground"></div>
           <span className="text-muted-foreground italic font-urbanist hidden sm:inline">crafting clarity in a world of noise</span>
           <span className="text-muted-foreground italic font-urbanist sm:hidden">crafting clarity in a world of noise</span>
-        </div>
+        </motion.div>
 
-        <h1 className="font-playfair text-5xl font-extrabold tracking-tighter sm:text-6xl md:text-7xl flex flex-col mb-6 sm:mb-8">
+        <motion.h1
+          className="font-playfair text-5xl font-extrabold tracking-tighter sm:text-6xl md:text-7xl flex flex-col mb-6 sm:mb-8"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           {/* <span className="text-4xl sm:text-6xl md:text-7xl font-extrabold">Empowering Your Digital</span> */}
           <span className="h-[1.5em] block">
             <TypewriterEffect />
           </span>
-        </h1>
+        </motion.h1>
 
-        <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6">
-          <p className="lead-text text-base sm:text-lg md:text-xl px-2 sm:px-0">
+        <motion.div
+          className="max-w-3xl mx-auto space-y-4 sm:space-y-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.p
+            className="lead-text text-base sm:text-lg md:text-xl px-2 sm:px-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
             @shunyaek.se, we're a small but mighty software and technology consulting agency,
             dedicated to transforming the digital landscape with precision and flair.
-          </p>
+          </motion.p>
 
-          <p className="lead-text text-base sm:text-lg md:text-xl px-2 sm:px-0">
+          <motion.p
+            className="lead-text text-base sm:text-lg md:text-xl px-2 sm:px-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+            viewport={{ once: true }}
+          >
             we take the fundamental elements of technology — zeros and ones — and craft them
             into exceptional products and platforms that stand out in today's market.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="mt-8 sm:mt-12 flex justify-center">
+        <motion.div
+          className="mt-8 sm:mt-12 flex justify-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
+          viewport={{ once: true }}
+        >
           <CustomButton href="#connect" />
-        </div>
+        </motion.div>
       </div>
     </section>
   )
