@@ -90,6 +90,12 @@ When mistakes happen:
 
 ## Specific Guidelines
 
+### Running The Code
+
+- Always check if an instance of the local server is running or not before starting a new instance.
+- Alwasy know which directory / sub-directory the local server needs to be started in.
+- Avoid running a local server instance in all cases unless needed. Always ask the user to run the app and verify the changes.
+
 ### Code Changes
 - Always backup/preserve existing implementations
 - Use feature flags or gradual rollouts when possible
